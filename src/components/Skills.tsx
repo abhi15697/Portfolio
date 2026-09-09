@@ -12,46 +12,46 @@ interface SkillCategory {
 export const Skills: React.FC = () => {
   const skillCategories: SkillCategory[] = [
     {
-      title: 'Frontend Core',
-      icon: <Laptop size={22} />,
-      colorClass: 'text-primary-indigo border-primary-indigo/35 bg-primary-indigo/5',
-      skills: ['React Native', 'React.js', 'JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3 / SASS'],
-    },
-    {
-      title: 'State Management',
-      icon: <Cpu size={22} />,
-      colorClass: 'text-primary-cyan border-primary-cyan/35 bg-primary-cyan/5',
-      skills: ['Redux Toolkit', 'React Query', 'Context API', 'AsyncStorage State Sync'],
-    },
-    {
-      title: 'API & Backend Integration',
-      icon: <Database size={22} />,
-      colorClass: 'text-primary-violet border-primary-violet/35 bg-primary-violet/5',
-      skills: ['REST APIs', 'GraphQL APIs', 'Firebase Authentication', 'Firebase Crashlytics'],
-    },
-    {
-      title: 'Mobile Frameworks',
+      title: 'Core Mobile & React Native',
       icon: <Smartphone size={22} />,
-      colorClass: 'text-primary-fuchsia border-primary-fuchsia/35 bg-primary-fuchsia/5',
-      skills: ['Android Studio / Java', 'Xcode / Objective-C', 'React Navigation v6', 'Deep Linking', 'Push Notifications (FCM)'],
-    },
-    {
-      title: 'Integrations & SDKs',
-      icon: <Share2 size={22} />,
-      colorClass: 'text-primary-cyan border-primary-cyan/35 bg-primary-cyan/5',
-      skills: ['Google Maps SDK', 'Razorpay Payments', 'Stripe Gateway', 'Apple/Google Sign In'],
-    },
-    {
-      title: 'Tools & Workflow',
-      icon: <GitBranch size={22} />,
       colorClass: 'text-primary-indigo border-primary-indigo/35 bg-primary-indigo/5',
-      skills: ['Git & GitHub', 'Gradle / Proguard', 'CocoaPods / Gems', 'Jenkins CI/CD', 'Docker containers'],
+      skills: ['React Native (0.74+)', 'TypeScript', 'JavaScript (ES6+)', 'React Hooks', 'Custom Mobile Hooks', 'JSX / TSX'],
     },
     {
-      title: 'Performance & Architecture',
+      title: 'New Architecture & Performance',
       icon: <Zap size={22} className="text-amber-500" />,
       colorClass: 'text-amber-500 border-amber-500/35 bg-amber-500/5',
-      skills: ['Hermes Engine profiling', 'FlatList Optimizations', 'Memoization & useCallback', 'Fabric (New Renderer)', 'TurboModules & JSI'],
+      skills: ['Hermes JIT Engine', 'JSI (C++ Direct Bridge)', 'Fabric Concurrent UI', 'TurboModules', 'FlatList Optimization', 'Memory Profiling'],
+    },
+    {
+      title: 'Mobile UI & Animations',
+      icon: <Laptop size={22} />,
+      colorClass: 'text-primary-cyan border-primary-cyan/35 bg-primary-cyan/5',
+      skills: ['React Native Reanimated 3', 'Gesture Handler', 'React Native Paper', 'Vector Icons', 'Lottie Animations', 'Safe Area Context'],
+    },
+    {
+      title: 'State & Mobile Storage',
+      icon: <Cpu size={22} />,
+      colorClass: 'text-primary-violet border-primary-violet/35 bg-primary-violet/5',
+      skills: ['Redux Toolkit (RTK)', 'RTK Query', 'React Context API', 'MMKV Storage', 'AsyncStorage', 'Zustand'],
+    },
+    {
+      title: 'Native Platform & Tooling',
+      icon: <GitBranch size={22} />,
+      colorClass: 'text-primary-fuchsia border-primary-fuchsia/35 bg-primary-fuchsia/5',
+      skills: ['Android Studio (Gradle)', 'Xcode (CocoaPods)', 'ProGuard / APK Shrinking', 'App Store Connect', 'Google Play Console', 'Fastlane'],
+    },
+    {
+      title: 'Native SDKs & Hardware',
+      icon: <Share2 size={22} />,
+      colorClass: 'text-primary-cyan border-primary-cyan/35 bg-primary-cyan/5',
+      skills: ['Google Maps SDK', 'Firebase FCM Push', 'Device Camera APIs', 'Razorpay & Stripe SDKs', 'Biometric / FaceID', 'Deep Linking (React Nav v6)'],
+    },
+    {
+      title: 'APIs & Mobile Diagnostics',
+      icon: <Database size={22} />,
+      colorClass: 'text-primary-indigo border-primary-indigo/35 bg-primary-indigo/5',
+      skills: ['REST APIs', 'GraphQL APIs', 'Flipper & Reactotron', 'Firebase Crashlytics', 'Jest Unit Tests', 'Network Interceptors'],
     },
   ];
 

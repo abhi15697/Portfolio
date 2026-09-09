@@ -94,7 +94,7 @@ export const Contact: React.FC = () => {
                 Let's build something great together.
               </h3>
               <p className="text-sm text-slate-650 dark:text-slate-400 leading-relaxed font-light">
-                Feel free to reach out if you're looking for a React Native developer, React.js specialist, or want to discuss a potential project or opportunity.
+                Feel free to reach out if you're looking for a React Native mobile developer, cross-platform engineer for iOS & Android, or want to discuss a new app build or architecture migration.
               </p>
 
               <div className="space-y-4 pt-4">

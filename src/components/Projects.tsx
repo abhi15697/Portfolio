@@ -19,10 +19,10 @@ export const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       name: 'Sarwa',
-      tagline: 'AI-Powered E-Commerce & Delivery App',
-      description: 'A premium React Native shopping and delivery application featuring thousands of products, trusted brands, real-time order tracking, payment integration, push notifications, and a smooth mobile shopping experience.',
-      technologies: ['React Native', 'JavaScript', 'Redux Toolkit', 'Firebase Suite', 'REST APIs', 'Google Maps', 'Payment Gateway'],
-      features: ['Product browsing & search filtering', 'Cart, checkout, and payments integration', 'Real-time order tracking with background maps', 'FCM Push notifications & location services'],
+      tagline: 'AI-Powered Mobile E-Commerce & Delivery App',
+      description: 'A premium cross-platform React Native shopping and delivery application featuring thousands of products, trusted brands, real-time courier order tracking via Google Maps, Razorpay/Stripe checkout, and rich FCM push notifications.',
+      technologies: ['React Native', 'TypeScript', 'Redux Toolkit', 'Google Maps SDK', 'Firebase FCM', 'Razorpay Payments', 'AsyncStorage'],
+      features: ['Product browsing, live search filtering & cart flow', 'Secure checkout with multiple payment gateways', 'Real-time courier GPS tracking with background maps', 'Background/Foreground FCM push notifications'],
       links: {
         github: 'https://github.com',
         live: 'https://play.google.com',
@@ -33,16 +33,16 @@ export const Projects: React.FC = () => {
           <div className="flex items-center justify-between border-b border-slate-800 pb-2">
             <div className="flex items-center gap-1.5">
               <ShoppingCart size={14} className="text-primary-cyan" />
-              <span className="font-bold text-white tracking-wide text-[10px]">SARWA AI SHOP</span>
+              <span className="font-bold text-white tracking-wide text-[10px]">SARWA MOBILE APP</span>
             </div>
-            <span className="text-[9px] px-2 py-0.5 bg-emerald-500/10 text-emerald-400 font-semibold rounded-full border border-emerald-500/20">Active Order</span>
+            <span className="text-[9px] px-2 py-0.5 bg-emerald-500/10 text-emerald-400 font-semibold rounded-full border border-emerald-500/20">iOS & Android</span>
           </div>
           {/* Main area: Map snippet */}
           <div className="my-2 bg-[#1b2234] rounded-lg p-2.5 flex-1 relative flex flex-col justify-between overflow-hidden border border-slate-800">
             {/* Dot Grid Map Representation */}
             <div className="absolute inset-0 bg-grid-pattern-dark opacity-40" />
             <div className="relative z-10 flex items-center justify-between">
-              <span className="font-mono text-[9px] text-slate-400">Courier: John Doe</span>
+              <span className="font-mono text-[9px] text-slate-400">Courier: Live GPS Tracking</span>
               <span className="font-bold text-[9px] text-primary-cyan">ETA: 12 Mins</span>
             </div>
             <div className="relative z-10 flex items-center gap-2 mt-2 bg-darkBg-card/90 p-1.5 rounded border border-slate-700/50">
@@ -68,10 +68,10 @@ export const Projects: React.FC = () => {
     },
     {
       name: 'No Stress Impress',
-      tagline: 'Healthcare & Dental Care App',
-      description: 'A cross-platform healthcare application built with React Native with features such as image upload, camera integration, user management, and API integration.',
-      technologies: ['React Native', 'JavaScript', 'REST APIs', 'Native Device Camera', 'Image Upload API'],
-      features: ['Secure user account registration', 'Camera API integration for dental diagnostics', 'Multi-part image uploads to remote servers', 'Mobile-friendly responsive medical UI'],
+      tagline: 'Cross-Platform Mobile Healthcare & Dental App',
+      description: 'A native mobile healthcare application built with React Native featuring hardware camera access, multipart medical scan upload, patient management, and secure biometric authentication.',
+      technologies: ['React Native', 'TypeScript', 'Native Camera API', 'Image Upload SDK', 'REST APIs', 'React Navigation v6'],
+      features: ['Secure user account registration & biometrics', 'Native Camera API integration for diagnostic scans', 'Optimized multi-part image uploads to cloud endpoints', 'Butter-smooth mobile UI with responsive layouts'],
       links: {
         github: 'https://github.com',
       },
@@ -81,15 +81,16 @@ export const Projects: React.FC = () => {
           <div className="flex items-center justify-between border-b border-slate-800 pb-2">
             <div className="flex items-center gap-1.5">
               <Activity size={14} className="text-primary-fuchsia" />
-              <span className="font-bold text-white tracking-wide text-[10px]">DENTAL APPOINTMENT</span>
+              <span className="font-bold text-white tracking-wide text-[10px]">DENTAL CARE MOBILE</span>
             </div>
+            <span className="text-[9px] px-2 py-0.5 bg-primary-fuchsia/10 text-primary-fuchsia font-semibold rounded-full border border-primary-fuchsia/20">Camera Active</span>
           </div>
           {/* Camera Upload Section */}
           <div className="my-2 bg-[#1b2234] rounded-lg p-3 flex-1 flex flex-col items-center justify-center relative border border-slate-800">
             <div className="w-10 h-10 rounded-full bg-primary-fuchsia/10 flex items-center justify-center text-primary-fuchsia mb-2 border border-primary-fuchsia/20">
               <Camera size={18} />
             </div>
-            <span className="text-[9px] font-bold text-slate-200">Dental Scan Upload</span>
+            <span className="text-[9px] font-bold text-slate-200">Dental Scan Camera Upload</span>
             <span className="text-[8px] text-slate-400 mt-0.5">JPEG / PNG format accepted</span>
             {/* Mock upload progress */}
             <div className="w-full bg-slate-800 rounded-full h-1 mt-3 overflow-hidden">
@@ -109,11 +110,11 @@ export const Projects: React.FC = () => {
       ),
     },
     {
-      name: 'EWA App Migration',
-      tagline: 'React Native Application Architecture Upgrade',
-      description: 'Led the core architectural migration of a legacy React Native codebase to the modern React Native framework, incorporating the Hermes engine and native modules.',
-      technologies: ['React Native Upgrade', 'Android Gradle Migrate', 'iOS CocoaPods / Gems', 'Hermes JIT Engine', 'New Architecture (Fabric / TurboModules)', 'JSI'],
-      features: ['Upgraded framework version and configurations', 'Migrated old packages to turbomodules compatible targets', 'Enabled Hermes engine to reduce APK sizes', 'Implemented JSI bridges to reduce execution overhead'],
+      name: 'EWA Mobile Architecture Migration',
+      tagline: 'React Native New Architecture & Hermes Upgrade',
+      description: 'Led the enterprise architectural migration of a legacy React Native codebase to React Native 0.74+, integrating the Hermes JIT engine, synchronous C++ JSI bindings, Fabric UI rendering, and TurboModules.',
+      technologies: ['React Native 0.74', 'Hermes JIT Engine', 'JSI (C++ Direct Bridge)', 'Fabric Concurrent UI', 'TurboModules', 'Gradle / CocoaPods'],
+      features: ['Upgraded framework version and resolved breaking package dependencies', 'Migrated old bridges to TurboModules and C++ JSI host objects', 'Enabled Hermes engine to reduce APK sizes and cold launch times', 'Achieved consistent 60 FPS scrolling and reduced RAM footprint by 28%'],
       links: {
         live: 'https://github.com',
       },

@@ -4,10 +4,10 @@ import { Sparkles, Calendar, Layers, Smartphone, Settings } from 'lucide-react';
 
 export const About: React.FC = () => {
   const stats = [
-    { value: '3+', label: 'Years Experience', desc: 'React Native & React.js focused development', icon: <Calendar className="text-primary-indigo" size={24} /> },
-    { value: '10+', label: 'Core Technologies', desc: 'Redux, GraphQL, React Query, Firebase, Maps', icon: <Layers className="text-primary-cyan" size={24} /> },
-    { value: 'Multiple', label: 'Production Apps', desc: 'Successfully deployed on Play Store & App Store', icon: <Smartphone className="text-primary-violet" size={24} /> },
-    { value: 'Hermes', label: 'Engine Optimizations', desc: 'Reducing startup latency and optimizing memory', icon: <Settings className="text-primary-fuchsia" size={24} /> },
+    { value: '3+', label: 'Years Experience', desc: 'Dedicated React Native mobile engineering', icon: <Calendar className="text-primary-indigo" size={24} /> },
+    { value: '10+', label: 'Mobile & Native SDKs', desc: 'Reanimated, Redux, Firebase, Maps, Payments', icon: <Layers className="text-primary-cyan" size={24} /> },
+    { value: 'Multiple', label: 'Store Releases', desc: 'Live apps shipped on Google Play & App Store', icon: <Smartphone className="text-primary-violet" size={24} /> },
+    { value: '60 FPS', label: 'Hermes Performance', desc: 'JSI direct binding & low memory footprint', icon: <Settings className="text-primary-fuchsia" size={24} /> },
   ];
 
   return (
@@ -51,34 +51,34 @@ export const About: React.FC = () => {
             className="lg:col-span-6 space-y-6"
           >
             <h3 className="text-xl sm:text-2xl font-outfit font-bold text-slate-800 dark:text-slate-200">
-              Experienced Cross-Platform Mobile & Web Developer
+              Passionate React Native Mobile Engineer (iOS & Android)
             </h3>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I am a dedicated <strong className="font-semibold text-slate-800 dark:text-slate-250">React Native & React.js developer</strong> with around <strong className="font-semibold text-slate-800 dark:text-slate-250">3 years of professional experience</strong> specializing in building high-performance, production-ready applications. My expertise spans creating fluid mobile interfaces for Android & iOS and building scalable web portals.
+              I am a dedicated <strong className="font-semibold text-slate-800 dark:text-slate-250">React Native Developer</strong> with <strong className="font-semibold text-slate-800 dark:text-slate-250">3+ years of professional experience</strong> building high-performance, production-grade cross-platform mobile applications for iOS and Android. My engineering focus centers on clean modular architecture, native bridge optimization, and butter-smooth 60 FPS mobile user interfaces.
             </p>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I excel in integrating complex third-party features such as <strong className="font-semibold text-slate-800 dark:text-slate-250">REST APIs, GraphQL schemas, payment gateways (Razorpay/Stripe), Google Maps</strong>, and push notification frameworks. I enjoy streamlining configurations, executing version upgrades, and implementing performance tuning techniques using memoization, optimization of lists, and profiling memory.
+              I have extensive hands-on experience integrating complex mobile SDKs and native hardware features including <strong className="font-semibold text-slate-800 dark:text-slate-250">Google Maps SDK, Native Camera APIs, Payment Gateways (Razorpay/Stripe), Biometrics, Firebase FCM Push Notifications</strong>, and REST/GraphQL data layers with robust offline-first caching.
             </p>
 
             <div className="space-y-3.5 pt-2">
               <div className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-indigo/10 dark:bg-primary-indigo/20 flex items-center justify-center text-primary-indigo dark:text-primary-cyan text-xs font-bold">1</span>
                 <span className="text-sm text-slate-600 dark:text-slate-300">
-                  <strong>Production Deployment:</strong> Full ownership of builds on Apple App Store & Google Play Store, managing configurations with Gradle, Cocoapods, and Xcode.
+                  <strong>Store Releases & Native Tooling:</strong> Complete ownership of release builds on Google Play Store & Apple App Store, configuring Gradle, ProGuard, CocoaPods, and Xcode provisioning.
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-cyan/10 dark:bg-primary-cyan/20 flex items-center justify-center text-primary-cyan text-xs font-bold">2</span>
                 <span className="text-sm text-slate-600 dark:text-slate-300">
-                  <strong>Architecture Upgrades:</strong> Proficient with React Native's New Architecture, JSI, Fabric renderer, and TurboModules migration.
+                  <strong>New Architecture (Fabric & TurboModules):</strong> Proven capability upgrading legacy codebases to React Native New Architecture, Hermes JIT bytecode, and synchronous C++ JSI interfaces.
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-fuchsia/10 dark:bg-primary-fuchsia/20 flex items-center justify-center text-primary-fuchsia text-xs font-bold">3</span>
                 <span className="text-sm text-slate-600 dark:text-slate-300">
-                  <strong>Scalable State:</strong> Experienced in building robust state graphs using Redux Toolkit, Context, and asynchronous query models via React Query.
+                  <strong>Performance & State Management:</strong> Architecting predictable mobile state with Redux Toolkit and MMKV, while profiling memory leaks and eliminating JS thread frame drops.
                 </span>
               </div>
             </div>

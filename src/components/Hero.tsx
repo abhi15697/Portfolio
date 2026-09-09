@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Linkedin, Download, ArrowRight, CheckCircle2, ChevronDown, Terminal, Cpu } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Github, Linkedin, Download, ArrowRight, CheckCircle2, Terminal, Cpu } from 'lucide-react';
+import resumePdf from '../../Abhishek_React_Native.pdf';
 
 export const Hero: React.FC = () => {
-  const [showResumeDropdown, setShowResumeDropdown] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -21,18 +21,14 @@ export const Hero: React.FC = () => {
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 100 } },
   };
 
-  const resumeOptions = [
-    { label: 'React Native', filename: '/Abhishek_Kumar_Srivastava_ReactNative.pdf' },
-    { label: 'React.js', filename: '/Abhishek_Kumar_Srivastava_ReactJS.pdf' },
-    { label: 'Combined / Full-Stack', filename: '/Abhishek_Kumar_Srivastava_FullStack.pdf' },
-  ];
+
 
   const highlights = [
-    '3+ Years Experience',
-    'React Native Expert',
-    'React.js Specialist',
-    'TypeScript & JS ES6+',
-    'Android & iOS Builds',
+    '3+ Years React Native',
+    'iOS (Xcode) & Android (Gradle)',
+    'Fabric & TurboModules (New Arch)',
+    'Hermes & JSI Performance',
+    'Play Store & App Store Releases',
   ];
 
   return (
@@ -54,7 +50,7 @@ export const Hero: React.FC = () => {
             {/* Status Badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Available for Full-time Opportunities & Projects</span>
+              <span>Available for React Native & Mobile Roles</span>
             </motion.div>
 
             {/* Title / Name */}
@@ -75,10 +71,10 @@ export const Hero: React.FC = () => {
             {/* Headline & Subtitle */}
             <div className="space-y-4 max-w-2xl">
               <motion.h3 variants={itemVariants} className="text-2xl sm:text-3xl font-outfit font-bold text-slate-700 dark:text-slate-200">
-                React Native & React.js Developer
+                React Native Mobile Developer (iOS & Android)
               </motion.h3>
               <motion.p variants={itemVariants} className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-                Building scalable, high-performance mobile and web applications with React Native, React.js, TypeScript, and modern JavaScript. Deeply focused on optimized rendering pipelines, React Native New Architecture components, and elegant state management.
+                Building high-performance, production-ready mobile applications for iOS and Android with React Native and TypeScript. Deeply specialized in React Native New Architecture (Fabric & TurboModules), Hermes engine optimization, custom native bridges, and fluid 60 FPS mobile user experiences.
               </motion.p>
             </div>
 
@@ -102,45 +98,15 @@ export const Hero: React.FC = () => {
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
 
-              {/* Resume download with dropdown */}
-              <div className="relative">
-                <button
-                  onClick={() => setShowResumeDropdown(!showResumeDropdown)}
-                  className="flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 dark:text-slate-300 bg-slate-200/60 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 rounded-full hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200"
-                >
-                  <Download size={18} />
-                  <span>Download Resume</span>
-                  <ChevronDown size={14} className={`transition-transform duration-200 ${showResumeDropdown ? 'rotate-180' : ''}`} />
-                </button>
-
-                <AnimatePresence>
-                  {showResumeDropdown && (
-                    <>
-                      <div className="fixed inset-0 z-10" onClick={() => setShowResumeDropdown(false)} />
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute left-0 mt-2 w-56 rounded-xl shadow-2xl z-20 overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-darkBg-card"
-                      >
-                        <div className="py-1">
-                          {resumeOptions.map((opt) => (
-                            <a
-                              key={opt.label}
-                              href={opt.filename}
-                              download
-                              onClick={() => setShowResumeDropdown(false)}
-                              className="block px-4 py-3 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors"
-                            >
-                              {opt.label}
-                            </a>
-                          ))}
-                        </div>
-                      </motion.div>
-                    </>
-                  )}
-                </AnimatePresence>
-              </div>
+              {/* Direct Resume download */}
+              <a
+                href={resumePdf}
+                download="Abhishek_Kumar_Srivastava_ReactNative_CV.pdf"
+                className="flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 dark:text-slate-300 bg-slate-200/60 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 rounded-full hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200"
+              >
+                <Download size={18} />
+                <span>Download Resume</span>
+              </a>
 
               <a
                 href="#contact"
@@ -194,7 +160,7 @@ export const Hero: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono font-medium">
                   <Terminal size={12} className="text-primary-cyan" />
-                  <span>DeveloperProfile.ts</span>
+                  <span>ReactNativeProfile.ts</span>
                 </div>
                 <div className="w-6" /> {/* Spacer */}
               </div>
@@ -203,43 +169,41 @@ export const Hero: React.FC = () => {
               <div className="p-5 font-mono text-[11px] sm:text-xs leading-relaxed text-slate-300 overflow-x-auto select-none">
                 <pre>
                   <code>
-                    <span className="text-[#a6accd]">{`// React Native New Architecture Migration`}</span>
+                    <span className="text-[#a6accd]">{`// React Native Mobile Architecture`}</span>
                     {'\n'}
-                    <span className="text-[#c792ea]">import</span> <span className="text-[#89ddff]">{`{`}</span> <span className="text-[#f07178]">TurboModuleRegistry</span> <span className="text-[#89ddff]">{`}`}</span> <span className="text-[#c792ea]">from</span> <span className="text-[#c3e88d]">'react-native'</span><span className="text-[#89ddff]">;</span>
+                    <span className="text-[#c792ea]">import</span> <span className="text-[#89ddff]">{`{`}</span> <span className="text-[#f07178]">TurboModuleRegistry</span><span className="text-[#89ddff]">,</span> <span className="text-[#f07178]">Platform</span> <span className="text-[#89ddff]">{`}`}</span> <span className="text-[#c792ea]">from</span> <span className="text-[#c3e88d]">'react-native'</span><span className="text-[#89ddff]">;</span>
                     {'\n'}
-                    <span className="text-[#c792ea]">import</span> <span className="text-[#89ddff]">{`{`}</span> <span className="text-[#f07178]">JSI</span> <span className="text-[#89ddff]">{`}`}</span> <span className="text-[#c792ea]">from</span> <span className="text-[#c3e88d]">'react-native-jsi'</span><span className="text-[#89ddff]">;</span>
+                    <span className="text-[#c792ea]">import</span> <span className="text-[#89ddff]">{`{`}</span> <span className="text-[#f07178]">useSharedValue</span><span className="text-[#89ddff]">,</span> <span className="text-[#f07178]">withSpring</span> <span className="text-[#89ddff]">{`}`}</span> <span className="text-[#c792ea]">from</span> <span className="text-[#c3e88d]">'react-native-reanimated'</span><span className="text-[#89ddff]">;</span>
                     {'\n\n'}
-                    <span className="text-[#c792ea]">interface</span> <span className="text-[#ffcb6b]">DeveloperProfile</span> <span className="text-[#89ddff]">{`{`}</span>
+                    <span className="text-[#c792ea]">interface</span> <span className="text-[#ffcb6b]">MobileDeveloper</span> <span className="text-[#89ddff]">{`{`}</span>
                     {'\n'}
                     {`  name: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
                     {`  role: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
-                    {`  experience: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
+                    {`  platforms: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff]">[]</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
-                    {`  skills: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff]">[]</span><span className="text-[#89ddff] font-bold">;</span>
+                    {`  experience: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
                     {`  architecture: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
-                    {`  engine: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
+                    {`  performance: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
                     <span className="text-[#89ddff]">{`}`}</span>
                     {'\n\n'}
-                    <span className="text-[#c792ea]">export const</span> <span className="text-[#ffcb6b]">Abhishek</span><span className="text-[#89ddff]">:</span> <span className="text-[#ffcb6b]">DeveloperProfile</span> <span className="text-[#89ddff]">=</span> <span className="text-[#89ddff]">{`{`}</span>
+                    <span className="text-[#c792ea]">export const</span> <span className="text-[#ffcb6b]">Abhishek</span><span className="text-[#89ddff]">:</span> <span className="text-[#ffcb6b]">MobileDeveloper</span> <span className="text-[#89ddff]">=</span> <span className="text-[#89ddff]">{`{`}</span>
                     {'\n'}
                     {`  name: `}<span className="text-[#c3e88d]">'Abhishek Kumar Srivastava'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  role: `}<span className="text-[#c3e88d]">'React Native & React.js Developer'</span><span className="text-[#89ddff]">,</span>
+                    {`  role: `}<span className="text-[#c3e88d]">'React Native Mobile Developer'</span><span className="text-[#89ddff]">,</span>
+                    {'\n'}
+                    {`  platforms: `}<span className="text-[#89ddff]">{`[`}</span><span className="text-[#c3e88d]">'iOS'</span><span className="text-[#89ddff]">,</span> <span className="text-[#c3e88d]">'Android'</span><span className="text-[#89ddff]">{`],`}</span>
                     {'\n'}
                     {`  experience: `}<span className="text-[#c3e88d]">'3+ Years'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  skills: `}<span className="text-[#89ddff]">{`[`}</span>
-                    <span className="text-[#c3e88d]">'TS'</span><span className="text-[#89ddff]">,</span> <span className="text-[#c3e88d]">'Redux'</span><span className="text-[#89ddff]">,</span> <span className="text-[#c3e88d]">'GraphQL'</span>
-                    <span className="text-[#89ddff]">{`],`}</span>
+                    {`  architecture: `}<span className="text-[#c3e88d]">'Fabric + TurboModules + JSI'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  architecture: `}<span className="text-[#c3e88d]">'New Arch (Fabric + TurboModules)'</span><span className="text-[#89ddff]">,</span>
-                    {'\n'}
-                    {`  engine: `}<span className="text-[#c3e88d]">'Hermes Optimized'</span>
+                    {`  performance: `}<span className="text-[#c3e88d]">'Hermes JIT + 60 FPS Reanimated'</span>
                     {'\n'}
                     <span className="text-[#89ddff]">{`};`}</span>
                   </code>

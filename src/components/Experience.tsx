@@ -5,37 +5,37 @@ import { Briefcase, Calendar, MapPin, Cpu, LayoutGrid, Users, Award } from 'luci
 export const Experience: React.FC = () => {
   const experiences = [
     {
-      role: 'React Native & React.js Developer',
+      role: 'React Native Mobile Developer',
       company: 'Sphinx Solution Pvt. Ltd.',
       location: 'Pune, India',
       duration: 'July 2023 – Present (3+ Years)',
-      summary: 'Leading development of cross-platform mobile apps and front-end React portals. Core achievements include performance optimizations, standardizing state charts, and driving migration to the React Native New Architecture.',
+      summary: 'Spearheading cross-platform iOS and Android mobile app development. Core achievements include executing React Native New Architecture migrations (Fabric & TurboModules), building custom native bridges, optimizing Hermes bytecode execution, and managing continuous store release lifecycles.',
       categories: [
         {
           title: 'Mobile Architecture & Performance',
           icon: <Cpu size={16} className="text-primary-indigo" />,
           items: [
-            'Upgraded React Native applications to newer versions, migrating legacy dependencies to modern equivalents.',
-            'Implemented React Native New Architecture features including Fabric renderer components, TurboModules, and JSI interfaces.',
-            'Optimized application performance by resolving memory leaks, streamlining FlatList configurations, and utilizing Hermes engine profiling.'
+            'Upgraded mission-critical React Native applications to 0.74+, migrating legacy dependencies to modern TurboModules and Fabric components.',
+            'Implemented React Native New Architecture features including synchronous JSI C++ pointers, Hermes JIT engine, and off-thread UI rendering.',
+            'Reduced app cold-start times by ~35% and cut memory consumption by ~28% through list virtualization, memoization, and Flipper profiling.'
           ]
         },
         {
-          title: 'Feature Integration & Gateway Logic',
+          title: 'Native Modules & SDK Integrations',
           icon: <LayoutGrid size={16} className="text-primary-cyan" />,
           items: [
-            'Integrated REST APIs and GraphQL schemes with optimized cache layers using Redux Toolkit and React Query.',
-            'Implemented Razorpay and Stripe payment gateway SDKs with secure authentication checks.',
-            'Managed Firebase suite integrations including FCM push notifications, Authentication, Crashlytics, and Custom Analytics events.',
-            'Built real-time tracking systems integrating Google Maps SDK and localized background services.'
+            'Built custom native modules for Android (Java/Kotlin) and iOS (Objective-C/Swift) bridging device camera, biometrics, and secure storage.',
+            'Implemented Razorpay and Stripe payment gateway mobile SDKs with biometrics and secure token verification.',
+            'Managed Firebase Suite integrations including FCM push notifications, Crashlytics diagnostics, and deep linking across iOS and Android.',
+            'Engineered real-time driver/courier tracking systems integrating Google Maps SDK with background geolocation services.'
           ]
         },
         {
-          title: 'Deployment & Collaboration',
+          title: 'App Store Deployments & CI/CD',
           icon: <Users size={16} className="text-primary-violet" />,
           items: [
-            'Managed complete Android and iOS release lifecycles, configuring Gradle builds, CocoaPods configurations, and Xcode signing.',
-            'Collaborated with UI/UX designers, backend developers, QA testers, and product managers in agile sprints.'
+            'Managed end-to-end release lifecycles for Apple App Store (TestFlight, Provisioning, Certificates) and Google Play Console (AAB bundles, ProGuard, Keystores).',
+            'Collaborated with UI/UX designers, backend teams, and mobile QA engineers across fast-paced Agile sprint cycles.'
           ]
         }
       ]

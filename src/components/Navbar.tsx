@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
-import { Menu, X, Sun, Moon, Github, Linkedin, Download, ChevronDown } from 'lucide-react';
+import { Menu, X, Sun, Moon, Github, Linkedin, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import resumePdf from '../../Abhishek_React_Native.pdf';
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -17,7 +18,6 @@ export const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [showResumeDropdown, setShowResumeDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,12 +26,6 @@ export const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const resumeOptions = [
-    { label: 'React Native', filename: '/Abhishek_Kumar_Srivastava_ReactNative.pdf' },
-    { label: 'React.js', filename: '/Abhishek_Kumar_Srivastava_ReactJS.pdf' },
-    { label: 'Combined / Full-Stack', filename: '/Abhishek_Kumar_Srivastava_FullStack.pdf' },
-  ];
 
   return (
     <nav
@@ -45,11 +39,13 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="font-outfit font-extrabold text-2xl tracking-tight">
+            <a href="#" className="font-outfit font-extrabold text-2xl tracking-tight flex items-center gap-1.5">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-cyan to-primary-indigo">
                 Abhishek
               </span>
-              <span className="text-primary-indigo dark:text-primary-cyan">.</span>
+              <span className="text-[10px] px-2 py-0.5 font-mono font-bold rounded-full bg-primary-cyan/10 text-primary-cyan border border-primary-cyan/30 hidden sm:inline-block">
+                React Native Dev
+              </span>
             </a>
           </div>
 
@@ -74,6 +70,7 @@ export const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+              aria-label="GitHub Profile"
             >
               <Github size={20} />
             </a>
@@ -82,6 +79,7 @@ export const Navbar: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+              aria-label="LinkedIn Profile"
             >
               <Linkedin size={20} />
             </a>
@@ -95,45 +93,15 @@ export const Navbar: React.FC = () => {
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
 
-            {/* Resume Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setShowResumeDropdown(!showResumeDropdown)}
-                className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-full hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
-              >
-                <Download size={16} />
-                <span>Resume</span>
-                <ChevronDown size={14} className={`transition-transform duration-200 ${showResumeDropdown ? 'rotate-180' : ''}`} />
-              </button>
-
-              <AnimatePresence>
-                {showResumeDropdown && (
-                  <>
-                    <div className="fixed inset-0 z-10" onClick={() => setShowResumeDropdown(false)} />
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute right-0 mt-2 w-52 rounded-xl shadow-xl z-20 overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-darkBg-card"
-                    >
-                      <div className="py-1">
-                        {resumeOptions.map((opt) => (
-                          <a
-                            key={opt.label}
-                            href={opt.filename}
-                            download
-                            onClick={() => setShowResumeDropdown(false)}
-                            className="block px-4 py-2.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors"
-                          >
-                            {opt.label}
-                          </a>
-                        ))}
-                      </div>
-                    </motion.div>
-                  </>
-                )}
-              </AnimatePresence>
-            </div>
+            {/* Direct Resume Download */}
+            <a
+              href={resumePdf}
+              download="Abhishek_Kumar_Srivastava_ReactNative_CV.pdf"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-full hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
+            >
+              <Download size={16} />
+              <span>Resume</span>
+            </a>
           </div>
 
           {/* Mobile Actions: Hamburguer & Dark Mode */}
@@ -177,24 +145,16 @@ export const Navbar: React.FC = () => {
                 </a>
               ))}
               
-              <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
-                <div className="text-xs font-semibold text-slate-400 px-3 uppercase tracking-wider">
-                  Download Resume
-                </div>
-                <div className="grid grid-cols-1 gap-2 px-3">
-                  {resumeOptions.map((opt) => (
-                    <a
-                      key={opt.label}
-                      href={opt.filename}
-                      download
-                      onClick={() => setIsOpen(false)}
-                      className="flex items-center justify-between p-2 rounded-lg text-sm text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700"
-                    >
-                      <span>{opt.label}</span>
-                      <Download size={14} className="text-slate-400" />
-                    </a>
-                  ))}
-                </div>
+              <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3 px-3">
+                <a
+                  href={resumePdf}
+                  download="Abhishek_Kumar_Srivastava_ReactNative_CV.pdf"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan shadow-md hover:shadow-lg active:scale-95 transition-all"
+                >
+                  <Download size={16} />
+                  <span>Download React Native CV</span>
+                </a>
 
                 <div className="flex justify-center space-x-6 pt-4">
                   <a

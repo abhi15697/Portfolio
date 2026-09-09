@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               Abhishek Kumar Srivastava
             </a>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              React Native & React.js Developer
+              React Native Mobile Developer (iOS & Android)
             </p>
           </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Laptop, Link2, Flame, CreditCard, MapPin, Bell, Gauge, Layout } from 'lucide-react';
+import { Smartphone, Zap, Link2, Flame, CreditCard, MapPin, Bell, Gauge, Layout } from 'lucide-react';
 
 interface ServiceItem {
   icon: React.ReactNode;
@@ -13,51 +13,51 @@ export const Services: React.FC = () => {
   const services: ServiceItem[] = [
     {
       icon: <Smartphone size={24} />,
-      title: 'Mobile Applications',
-      desc: 'Build performance-first cross-platform applications for iOS and Android with customized native bridges.',
+      title: 'iOS & Android App Development',
+      desc: 'Build performance-first cross-platform mobile apps for iOS and Android with customized native UI and unified TypeScript codebases.',
       colorClass: 'text-primary-indigo bg-primary-indigo/10 border-primary-indigo/20',
     },
     {
-      icon: <Laptop size={24} />,
-      title: 'React.js Web Portals',
-      desc: 'Develop responsive, highly accessible Single Page Applications (SPAs) with modern visual assets.',
+      icon: <Gauge size={24} />,
+      title: 'New Architecture Migration',
+      desc: 'Upgrade legacy apps to React Native New Architecture (Fabric renderer, TurboModules, Hermes bytecode, and JSI C++ bridges).',
       colorClass: 'text-primary-cyan bg-primary-cyan/10 border-primary-cyan/20',
     },
     {
+      icon: <Zap size={24} />,
+      title: 'Mobile Performance Tuning',
+      desc: 'Eliminate frame drops, profile memory leaks, optimize FlatList virtualization, and achieve butter-smooth 60 FPS mobile user flows.',
+      colorClass: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
+    },
+    {
       icon: <Link2 size={24} />,
-      title: 'REST & GraphQL APIs',
-      desc: 'Integrate external secure endpoints with optimized caching, query refetch structures, and state updates.',
+      title: 'Native Modules & Bridges',
+      desc: 'Write custom native bridges in Java/Kotlin (Android) and Objective-C/Swift (iOS) to interface directly with device hardware.',
       colorClass: 'text-primary-violet bg-primary-violet/10 border-primary-violet/20',
     },
     {
-      icon: <Flame size={24} />,
-      title: 'Firebase Integrations',
-      desc: 'Leverage Firebase analytics, OAuth login layers, real-time Firestore database nodes, and custom events.',
-      colorClass: 'text-orange-500 bg-orange-500/10 border-orange-500/20',
-    },
-    {
-      icon: <CreditCard size={24} />,
-      title: 'Secure Payments',
-      desc: 'Implement secure checkout workflows integrating major providers like Razorpay and Stripe API layers.',
-      colorClass: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
-    },
-    {
       icon: <MapPin size={24} />,
-      title: 'Location & Maps SDK',
-      desc: 'Construct location tracking dashboards, geofencing parameters, and integrated background maps.',
+      title: 'Location & Google Maps SDK',
+      desc: 'Construct live courier/driver GPS tracking, geofencing parameters, and integrated background location services.',
       colorClass: 'text-red-500 bg-red-500/10 border-red-500/20',
     },
     {
+      icon: <CreditCard size={24} />,
+      title: 'Mobile Payment Gateways',
+      desc: 'Implement secure mobile checkout workflows integrating Razorpay, Stripe, Apple Pay, and Google Pay SDKs.',
+      colorClass: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
+    },
+    {
       icon: <Bell size={24} />,
-      title: 'Push Notifications',
-      desc: 'Configure background and foreground FCM notification systems for seamless user interaction loops.',
+      title: 'FCM Push & Deep Linking',
+      desc: 'Configure background and foreground FCM notification systems with universal deep links and rich push campaigns.',
       colorClass: 'text-primary-fuchsia bg-primary-fuchsia/10 border-primary-fuchsia/20',
     },
     {
-      icon: <Gauge size={24} />,
-      title: 'Performance Audits',
-      desc: 'Analyze frame rate lags, optimize lists rendering, shrink assets, and debug bundle memory bottlenecks.',
-      colorClass: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
+      icon: <Flame size={24} />,
+      title: 'App Store & Play Store CI/CD',
+      desc: 'Full ownership of store submissions, TestFlight builds, Gradle keystores, ProGuard rules, and automated release tracks.',
+      colorClass: 'text-orange-500 bg-orange-500/10 border-orange-500/20',
     },
   ];
 
