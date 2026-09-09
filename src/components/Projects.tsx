@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Layers, Terminal, Cpu } from 'lucide-react';
+import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Layers, Cpu } from 'lucide-react';
 
 interface Project {
   name: string;

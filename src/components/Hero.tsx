@@ -35,28 +35,6 @@ export const Hero: React.FC = () => {
     'Android & iOS Builds',
   ];
 
-  const mockCode = `// React Native New Architecture Migration
-import { TurboModuleRegistry } from 'react-native';
-import { JSI } from 'react-native-jsi';
-
-interface DeveloperProfile {
-  name: string;
-  role: string;
-  experience: string;
-  skills: string[];
-  architecture: string;
-  engine: string;
-}
-
-export const Abhishek: DeveloperProfile = {
-  name: 'Abhishek Kumar Srivastava',
-  role: 'React Native & React.js Developer',
-  experience: '3+ Years',
-  skills: ['TypeScript', 'Redux Toolkit', 'GraphQL'],
-  architecture: 'New Arch (Fabric + TurboModules)',
-  engine: 'Hermes Optimized'
-};`;
-
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-grid-pattern-light dark:bg-grid-pattern-dark">
       {/* Decorative colored blobs for premium dark feel */}

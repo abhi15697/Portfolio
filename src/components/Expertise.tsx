@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cpu, Zap, Activity, CheckCircle2, ChevronRight, Workflow, FileJson, Layout, Shuffle } from 'lucide-react';
+import { Cpu, Zap, Activity, CheckCircle2, ChevronRight, Workflow, FileJson, Shuffle } from 'lucide-react';
 
 export const Expertise: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'arch' | 'perf'>('arch');
@@ -161,7 +161,7 @@ export const Expertise: React.FC = () => {
 
                 {/* Tech node bullet columns */}
                 <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {archNodes.map((node, nodeIdx) => (
+                  {archNodes.map((node) => (
                     <div
                       key={node.title}
                       className="p-5 rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-card shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all"
@@ -189,7 +189,7 @@ export const Expertise: React.FC = () => {
                 transition={{ duration: 0.35 }}
                 className="grid grid-cols-1 md:grid-cols-2 gap-6"
               >
-                {perfPractices.map((practice, idx) => (
+                {perfPractices.map((practice) => (
                   <div
                     key={practice.topic}
                     className="p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-card shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
