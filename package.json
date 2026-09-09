@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:pdf": "mkdir -p public && \"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=\"public/Abhishek_Kumar_Srivastava_React_Native_Developer.pdf\" \"file://$(pwd)/Abhishek_Resume_ReactNative.html\"",
-    "build": "npm run build:pdf && tsc && vite build",
+    "build:pdf": "node scripts/generatePdf.js",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
