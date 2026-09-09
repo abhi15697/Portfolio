@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Layers, Cpu, Smartphone, Store, TrendingUp, Package } from 'lucide-react';
+import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Smartphone, Store, TrendingUp, Package, Users, MessageSquare, Heart, Sparkles, Layers } from 'lucide-react';
 
 interface Project {
   name: string;
@@ -192,48 +192,74 @@ export const Projects: React.FC = () => {
       ),
     },
     {
-      name: 'EWA Mobile Architecture Migration',
-      tagline: 'React Native New Architecture & Hermes Upgrade',
-      description: 'Led the enterprise architectural migration of a legacy React Native codebase to React Native 0.74+, integrating the Hermes JIT engine, synchronous C++ JSI bindings, Fabric UI rendering, and TurboModules.',
-      technologies: ['React Native 0.74', 'Hermes JIT Engine', 'JSI (C++ Direct Bridge)', 'Fabric Concurrent UI', 'TurboModules', 'Gradle / CocoaPods'],
-      features: ['Upgraded framework version and resolved breaking package dependencies', 'Migrated old bridges to TurboModules and C++ JSI host objects', 'Enabled Hermes engine to reduce APK sizes and cold launch times', 'Achieved consistent 60 FPS scrolling and reduced RAM footprint by 28%'],
-      links: {
-        live: 'https://github.com',
-      },
+      name: 'Multiply',
+      tagline: 'Creator Engagement & Social Monetization Mobile Platform',
+      description: 'A high-concurrency cross-platform mobile community application enabling content creators to publish exclusive media, interact with followers through real-time chat, and monetize engagement. Engineered with low-latency GraphQL subscriptions, optimistic UI state caching, and automated reward distribution.',
+      technologies: ['React Native', 'TypeScript', 'GraphQL', 'Firebase', 'React Query', 'Redux Toolkit', 'Real-Time Sockets', 'Android & iOS'],
+      features: [
+        'Real-time creator-to-fan engagement feeds with low-latency GraphQL subscriptions',
+        'Creator monetization tools, digital tip jars, and exclusive reward tier unlocks',
+        'Optimistic UI updates with offline caching via React Query and Redux Toolkit',
+        'Interactive live streaming chat, push notifications, and rich media sharing',
+        'High-performance 60 FPS feed scrolling with image pre-fetching and FlatList virtualization',
+        'Production releases on Apple App Store & Google Play Store',
+      ],
+      links: {},
       visualMockup: (
-        <div className="w-full h-full bg-[#0a0d16] p-4 flex flex-col justify-between font-mono text-[9px] relative overflow-hidden rounded-xl border border-slate-850">
-          {/* Terminal Top Bar */}
-          <div className="flex items-center gap-1.5 border-b border-slate-900 pb-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-            <span className="text-slate-400 text-[8px]">Hermes Bytecode Compiler v2.0</span>
-          </div>
-          {/* Terminal Console */}
-          <div className="flex-1 my-2 text-slate-300 space-y-1.5 select-none overflow-y-auto">
-            <div>
-              <span className="text-primary-cyan">$</span> react-native info
+        <div className="w-full h-full bg-[#111726] p-4 flex flex-col justify-between font-sans text-xs relative overflow-hidden rounded-xl border border-slate-800">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+            <div className="flex items-center gap-1.5">
+              <Users size={14} className="text-primary-violet" />
+              <span className="font-bold text-white tracking-wide text-[10px]">MULTIPLY CREATOR APP</span>
             </div>
-            <div className="text-slate-500 text-[8px]">
-              - React Native version: 0.74.x (migrated from 0.66.x)
-            </div>
-            <div>
-              <span className="text-primary-cyan">$</span> yarn build:hermes --profile-memory
-            </div>
-            <div className="text-emerald-400 text-[8px]">
-              ✔ Hermes Bytecode generated successfully (12.4s)
-            </div>
-            <div className="text-slate-400 text-[8px]">
-              - Memory footprint: -28.4%
-              {'\n'}- Fabric Renderer: ACTIVE
-              {'\n'}- TurboModules registry: 14 loaded
-            </div>
-          </div>
-          {/* Stats Bar */}
-          <div className="flex items-center justify-between border-t border-slate-900 pt-2 text-[8px] text-slate-500">
-            <span className="flex items-center gap-1">
-              <Cpu size={10} className="text-emerald-400 animate-pulse" />
-              <span>JSI Enabled</span>
+            <span className="text-[9px] px-2 py-0.5 bg-primary-violet/10 text-primary-violet font-semibold rounded-full border border-primary-violet/20">
+              Live Engagement
             </span>
-            <span className="text-primary-cyan font-bold">BUILD SUCCESS</span>
+          </div>
+
+          {/* Body Cards */}
+          <div className="my-2 space-y-2 flex-1 flex flex-col justify-between">
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-[#1b2234] p-2 rounded-lg border border-slate-800">
+                <div className="flex items-center justify-between text-[8px] text-slate-400 mb-0.5">
+                  <span>Live Audience</span>
+                  <Users size={10} className="text-primary-cyan" />
+                </div>
+                <span className="text-xs font-bold text-white">12.4K Online</span>
+              </div>
+              <div className="bg-[#1b2234] p-2 rounded-lg border border-slate-800">
+                <div className="flex items-center justify-between text-[8px] text-slate-400 mb-0.5">
+                  <span>Creator Tips</span>
+                  <Sparkles size={10} className="text-amber-400" />
+                </div>
+                <span className="text-xs font-bold text-amber-400">+$240.00 Today</span>
+              </div>
+            </div>
+
+            {/* Live interaction comment */}
+            <div className="bg-darkBg-card/90 p-2 rounded-lg border border-slate-700/60 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-primary-indigo to-primary-cyan flex items-center justify-center text-[8px] font-bold text-white">
+                  JD
+                </div>
+                <div className="flex flex-col text-[8px]">
+                  <span className="font-bold text-slate-200">@johndoe · VIP Supporter</span>
+                  <span className="text-slate-400 text-[7px]">"Amazing stream! Sent 50 gems 🔥"</span>
+                </div>
+              </div>
+              <Heart size={12} className="text-pink-500 fill-pink-500 animate-pulse" />
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="flex items-center justify-between pt-1 border-t border-slate-800/80 text-[8px] text-slate-400">
+            <span className="flex items-center gap-1">
+              <MessageSquare size={10} className="text-primary-violet" />
+              <span>GraphQL Subscriptions: Active</span>
+            </span>
+            <span className="text-emerald-400 font-bold">Latency: 38ms</span>
           </div>
         </div>
       ),
@@ -342,9 +368,9 @@ export const Projects: React.FC = () => {
                       href={proj.links.android}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full hover:shadow-md hover:scale-102 active:scale-95 transition-all"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all"
                     >
-                      <Smartphone size={14} />
+                      <Smartphone size={15} />
                       <span>Google Play Store</span>
                     </a>
                   )}
@@ -353,9 +379,9 @@ export const Projects: React.FC = () => {
                       href={proj.links.ios}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-full hover:shadow-md hover:scale-102 active:scale-95 transition-all"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-full shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all"
                     >
-                      <ExternalLink size={14} />
+                      <ExternalLink size={15} />
                       <span>Apple App Store</span>
                     </a>
                   )}
@@ -364,9 +390,9 @@ export const Projects: React.FC = () => {
                       href={proj.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-full hover:shadow-md hover:scale-102 active:scale-95 transition-all"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-full shadow-sm hover:shadow-md hover:scale-105 active:scale-95 transition-all"
                     >
-                      <ExternalLink size={14} />
+                      <ExternalLink size={15} />
                       <span>Live App Store</span>
                     </a>
                   )}
@@ -375,9 +401,9 @@ export const Projects: React.FC = () => {
                       href={proj.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-300 hover:border-slate-800 dark:border-slate-800 dark:hover:border-slate-600 rounded-full bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 transition-all active:scale-95"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-300 hover:border-slate-800 dark:border-slate-800 dark:hover:border-slate-600 rounded-full bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 transition-all active:scale-95"
                     >
-                      <Github size={14} />
+                      <Github size={15} />
                       <span>Code Repository</span>
                     </a>
                   )}

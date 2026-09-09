@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Calendar, Layers, Smartphone, Settings } from 'lucide-react';
+import { Sparkles, Calendar, Award, Smartphone, Settings } from 'lucide-react';
 
 export const About: React.FC = () => {
   const stats = [
     { value: '3+', label: 'Years Experience', desc: 'Dedicated React Native mobile engineering', icon: <Calendar className="text-primary-indigo" size={24} /> },
-    { value: '10+', label: 'Mobile & Native SDKs', desc: 'Reanimated, Redux, Firebase, Maps, Payments', icon: <Layers className="text-primary-cyan" size={24} /> },
+    { value: 'CDAC', label: 'Certified (PG-DMC)', desc: 'Post Graduate Diploma in Mobile Computing (Sunbeam)', icon: <Award className="text-emerald-500" size={24} /> },
     { value: 'Multiple', label: 'Store Releases', desc: 'Live apps shipped on Google Play & App Store', icon: <Smartphone className="text-primary-violet" size={24} /> },
     { value: '60 FPS', label: 'Hermes Performance', desc: 'JSI direct binding & low memory footprint', icon: <Settings className="text-primary-fuchsia" size={24} /> },
   ];
@@ -51,11 +51,11 @@ export const About: React.FC = () => {
             className="lg:col-span-6 space-y-6"
           >
             <h3 className="text-xl sm:text-2xl font-outfit font-bold text-slate-800 dark:text-slate-200">
-              Passionate React Native Mobile Engineer (iOS & Android)
+              CDAC Certified React Native Mobile Engineer (iOS & Android)
             </h3>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I am a dedicated <strong className="font-semibold text-slate-800 dark:text-slate-250">React Native Developer</strong> with <strong className="font-semibold text-slate-800 dark:text-slate-250">3+ years of professional experience</strong> building high-performance, production-grade cross-platform mobile applications for iOS and Android. My engineering focus centers on clean modular architecture, native bridge optimization, and butter-smooth 60 FPS mobile user interfaces.
+              I am a dedicated, <strong className="font-semibold text-slate-800 dark:text-slate-250">CDAC Certified React Native Developer</strong> (PG-Diploma in Mobile Computing from Sunbeam Pune) with <strong className="font-semibold text-slate-800 dark:text-slate-250">3+ years of professional experience</strong> building high-performance, production-grade cross-platform mobile applications for iOS and Android. My engineering focus centers on clean modular architecture, native bridge optimization, and butter-smooth 60 FPS mobile user interfaces.
             </p>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -64,19 +64,25 @@ export const About: React.FC = () => {
 
             <div className="space-y-3.5 pt-2">
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-indigo/10 dark:bg-primary-indigo/20 flex items-center justify-center text-primary-indigo dark:text-primary-cyan text-xs font-bold">1</span>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-500 text-xs font-bold">1</span>
+                <span className="text-sm text-slate-600 dark:text-slate-300">
+                  <strong>CDAC Certified (PG-DMC):</strong> Advanced Post Graduate Diploma in Mobile Computing from Sunbeam Pune (C-DAC ACTS), establishing strong foundations in mobile OS architectures, memory models, and data structures.
+                </span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-indigo/10 dark:bg-primary-indigo/20 flex items-center justify-center text-primary-indigo dark:text-primary-cyan text-xs font-bold">2</span>
                 <span className="text-sm text-slate-600 dark:text-slate-300">
                   <strong>Store Releases & Native Tooling:</strong> Complete ownership of release builds on Google Play Store & Apple App Store, configuring Gradle, ProGuard, CocoaPods, and Xcode provisioning.
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-cyan/10 dark:bg-primary-cyan/20 flex items-center justify-center text-primary-cyan text-xs font-bold">2</span>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-cyan/10 dark:bg-primary-cyan/20 flex items-center justify-center text-primary-cyan text-xs font-bold">3</span>
                 <span className="text-sm text-slate-600 dark:text-slate-300">
                   <strong>New Architecture (Fabric & TurboModules):</strong> Proven capability upgrading legacy codebases to React Native New Architecture, Hermes JIT bytecode, and synchronous C++ JSI interfaces.
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-fuchsia/10 dark:bg-primary-fuchsia/20 flex items-center justify-center text-primary-fuchsia text-xs font-bold">3</span>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-fuchsia/10 dark:bg-primary-fuchsia/20 flex items-center justify-center text-primary-fuchsia text-xs font-bold">4</span>
                 <span className="text-sm text-slate-600 dark:text-slate-300">
                   <strong>Performance & State Management:</strong> Architecting predictable mobile state with Redux Toolkit and MMKV, while profiling memory leaks and eliminating JS thread frame drops.
                 </span>

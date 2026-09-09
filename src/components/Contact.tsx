@@ -1,54 +1,38 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Github, Linkedin, Send, CheckCircle, Sparkles } from 'lucide-react';
-
-interface FormState {
-  name: string;
-  email: string;
-  message: string;
-}
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Github, Linkedin, Sparkles, ExternalLink } from 'lucide-react';
 
 export const Contact: React.FC = () => {
-  const [form, setForm] = useState<FormState>({ name: '', email: '', message: '' });
-  const [errors, setErrors] = useState<Partial<FormState>>({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const validate = (): boolean => {
-    const tempErrors: Partial<FormState> = {};
-    if (!form.name.trim()) tempErrors.name = 'Name is required';
-    if (!form.email.trim()) {
-      tempErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      tempErrors.email = 'Please enter a valid email address';
-    }
-    if (!form.message.trim()) tempErrors.message = 'Message is required';
-    
-    setErrors(tempErrors);
-    return Object.keys(tempErrors).length === 0;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    setIsSubmitting(true);
-    
-    // Simulate server request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setForm({ name: '', email: '', message: '' });
-    }, 1200);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-    if (errors[name as keyof FormState]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }));
-    }
-  };
+  const contactMethods = [
+    {
+      icon: <Mail size={22} className="text-primary-indigo dark:text-primary-cyan" />,
+      label: 'Email Address',
+      value: 'sriabhi12345@gmail.com',
+      href: 'mailto:sriabhi12345@gmail.com',
+      actionText: 'Compose Email',
+      secondaryAction: {
+        label: 'Gmail Web',
+        href: 'https://mail.google.com/mail/?view=cm&fs=1&to=sriabhi12345@gmail.com',
+      },
+    },
+    {
+      icon: <Phone size={22} className="text-emerald-500" />,
+      label: 'Mobile / Phone',
+      value: '+91-8004732941',
+      href: 'tel:+918004732941',
+      actionText: 'Call Directly',
+      secondaryAction: {
+        label: 'WhatsApp',
+        href: 'https://wa.me/918004732941',
+      },
+    },
+    {
+      icon: <MapPin size={22} className="text-primary-fuchsia" />,
+      label: 'Location',
+      value: 'Baner, Pune, India',
+      subValue: 'Maharashtra, India (Open to Remote)',
+    },
+  ];
 
   return (
     <section id="contact" className="relative py-24 bg-white dark:bg-darkBg">
@@ -79,203 +63,124 @@ export const Contact: React.FC = () => {
           <div className="h-1.5 w-16 bg-gradient-to-r from-primary-cyan to-primary-indigo mx-auto mt-4 rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch max-w-5xl mx-auto">
-          
-          {/* Contact Details Column */}
+        {/* Main Centered Card Container */}
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-5 flex flex-col justify-between p-8 rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/40 dark:bg-darkBg-card/40 backdrop-blur"
+            transition={{ duration: 0.6 }}
+            className="p-8 sm:p-12 rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/40 dark:bg-darkBg-card/40 backdrop-blur shadow-sm hover:shadow-xl dark:hover:shadow-glass-dark transition-all duration-300"
           >
-            <div className="space-y-6">
-              <h3 className="text-2xl font-outfit font-extrabold text-slate-800 dark:text-white">
+            <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+              <h3 className="text-2xl sm:text-3xl font-outfit font-extrabold text-slate-800 dark:text-white">
                 Let's build something great together.
               </h3>
-              <p className="text-sm text-slate-650 dark:text-slate-400 leading-relaxed font-light">
-                Feel free to reach out if you're looking for a React Native mobile developer, cross-platform engineer for iOS & Android, or want to discuss a new app build or architecture migration.
+              <p className="text-sm sm:text-base text-slate-650 dark:text-slate-400 leading-relaxed font-light">
+                Feel free to reach out directly if you're looking for a React Native mobile developer, cross-platform engineer for iOS & Android, or want to discuss a new app build or architecture migration.
               </p>
-
-              <div className="space-y-4 pt-4">
-                {/* Email Item */}
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-800/80 flex items-center justify-center text-primary-indigo dark:text-primary-cyan">
-                    <Mail size={18} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Email</span>
-                    <a href="mailto:abhishek.kumar@example.com" className="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors">
-                      abhishek.srivastava.dev@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                {/* Location Item */}
-                <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-800/80 flex items-center justify-center text-primary-indigo dark:text-primary-cyan">
-                    <MapPin size={18} />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Location</span>
-                    <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                      Pune, Maharashtra, India
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Social Links Row */}
-            <div className="pt-8 border-t border-slate-200/50 dark:border-slate-800/40 mt-8">
-              <div className="text-[10px] font-bold text-slate-450 uppercase tracking-widest mb-3">Connect on Socials</div>
+            {/* 3 Contact Info Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {contactMethods.map((method, idx) => (
+                <motion.div
+                  key={method.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  className="flex flex-col justify-between p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-secondary/50 shadow-sm hover:border-slate-300 dark:hover:border-slate-700/80 transition-all group"
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200">
+                      {method.icon}
+                    </div>
+                    <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider block mb-1">
+                      {method.label}
+                    </span>
+                    {method.href ? (
+                      <a
+                        href={method.href}
+                        className="text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors break-words block"
+                      >
+                        {method.value}
+                      </a>
+                    ) : (
+                      <span className="text-sm font-bold text-slate-800 dark:text-slate-100 block">
+                        {method.value}
+                      </span>
+                    )}
+                    {method.subValue && (
+                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 block font-light">
+                        {method.subValue}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Actions for each card */}
+                  {method.actionText && (
+                    <div className="flex items-center gap-2 pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80">
+                      <a
+                        href={method.href}
+                        className="text-xs font-semibold text-primary-indigo dark:text-primary-cyan hover:underline inline-flex items-center gap-1"
+                      >
+                        <span>{method.actionText}</span>
+                        <ExternalLink size={12} />
+                      </a>
+                      {method.secondaryAction && (
+                        <>
+                          <span className="text-slate-300 dark:text-slate-700">•</span>
+                          <a
+                            href={method.secondaryAction.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-semibold text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan transition-colors"
+                          >
+                            {method.secondaryAction.label}
+                          </a>
+                        </>
+                      )}
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom Connect / Socials Bar */}
+            <div className="mt-10 pt-8 border-t border-slate-200/60 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                  Connect on Socials:
+                </span>
+              </div>
               <div className="flex gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/sriabhi12345"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95"
                 >
                   <Github size={16} />
-                  <span>GitHub</span>
+                  <span>GitHub Profile</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/abhishek-srivastava-a0729b104/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95"
                 >
                   <Linkedin size={16} />
-                  <span>LinkedIn</span>
+                  <span>LinkedIn Profile</span>
                 </a>
               </div>
             </div>
+
           </motion.div>
-
-          {/* Form Column */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7 p-8 rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/40 dark:bg-darkBg-card/45 backdrop-blur flex flex-col justify-center"
-          >
-            <AnimatePresence mode="wait">
-              {isSubmitted ? (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  className="text-center py-8 space-y-4"
-                >
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto border border-emerald-500/25">
-                    <CheckCircle size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-white">Message Sent Successfully!</h3>
-                  <p className="text-xs sm:text-sm text-slate-550 dark:text-slate-400 max-w-sm mx-auto font-light leading-relaxed">
-                    Thank you for getting in touch. I have received your submission and will get back to you shortly.
-                  </p>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="px-5 py-2 text-xs font-bold text-primary-indigo hover:text-white border border-primary-indigo/25 hover:bg-primary-indigo rounded-full transition-all"
-                  >
-                    Send another message
-                  </button>
-                </motion.div>
-              ) : (
-                <motion.form
-                  key="form"
-                  onSubmit={handleSubmit}
-                  noValidate
-                  className="space-y-5"
-                >
-                  {/* Name Input */}
-                  <div className="flex flex-col">
-                    <label htmlFor="name" className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5 uppercase tracking-wide">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Abhishek Kumar Srivastava"
-                      className={`px-4 py-3 text-sm rounded-xl border bg-white dark:bg-darkBg-card text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 transition-all ${
-                        errors.name
-                          ? 'border-red-400 focus:ring-red-400/20'
-                          : 'border-slate-200 dark:border-slate-800 focus:border-primary-cyan focus:ring-primary-cyan/20'
-                      }`}
-                    />
-                    {errors.name && <span className="text-[10px] text-red-500 font-bold mt-1">{errors.name}</span>}
-                  </div>
-
-                  {/* Email Input */}
-                  <div className="flex flex-col">
-                    <label htmlFor="email" className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5 uppercase tracking-wide">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="abhishek.srivastava.dev@gmail.com"
-                      className={`px-4 py-3 text-sm rounded-xl border bg-white dark:bg-darkBg-card text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 transition-all ${
-                        errors.email
-                          ? 'border-red-400 focus:ring-red-400/20'
-                          : 'border-slate-200 dark:border-slate-800 focus:border-primary-cyan focus:ring-primary-cyan/20'
-                      }`}
-                    />
-                    {errors.email && <span className="text-[10px] text-red-500 font-bold mt-1">{errors.email}</span>}
-                  </div>
-
-                  {/* Message Input */}
-                  <div className="flex flex-col">
-                    <label htmlFor="message" className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5 uppercase tracking-wide">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={form.message}
-                      onChange={handleChange}
-                      placeholder="Type your message here..."
-                      className={`px-4 py-3 text-sm rounded-xl border bg-white dark:bg-darkBg-card text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 transition-all resize-none ${
-                        errors.message
-                          ? 'border-red-400 focus:ring-red-400/20'
-                          : 'border-slate-200 dark:border-slate-800 focus:border-primary-cyan focus:ring-primary-cyan/20'
-                      }`}
-                    />
-                    {errors.message && <span className="text-[10px] text-red-500 font-bold mt-1">{errors.message}</span>}
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="flex items-center justify-center gap-2 w-full py-4 text-sm font-bold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-xl hover:shadow-lg disabled:opacity-50 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer"
-                  >
-                    {isSubmitting ? (
-                      <span className="w-5 h-5 rounded-full border-2 border-white border-t-transparent animate-spin" />
-                    ) : (
-                      <>
-                        <Send size={15} />
-                        <span>Send Message</span>
-                      </>
-                    )}
-                  </button>
-                </motion.form>
-              )}
-            </AnimatePresence>
-          </motion.div>
-
         </div>
 
       </div>
     </section>
   );
 };
+

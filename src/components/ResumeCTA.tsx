@@ -18,7 +18,7 @@ export const ResumeCTA: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/15 border border-white/20">
           <Award size={12} />
-          <span>Detailed Mobile Credentials</span>
+          <span>CDAC Certified • Mobile Credentials</span>
         </div>
         
         <h2 className="text-3xl sm:text-4xl font-outfit font-extrabold tracking-tight">

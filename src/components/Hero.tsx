@@ -30,6 +30,7 @@ export const Hero: React.FC = () => {
 
 
   const highlights = [
+    'CDAC Certified (PG-DMC)',
     '3+ Years React Native',
     'iOS (Xcode) & Android (Gradle)',
     'Fabric & TurboModules (New Arch)',
@@ -136,18 +137,20 @@ export const Hero: React.FC = () => {
             <motion.div variants={itemVariants} className="flex items-center space-x-4 pt-4 border-t border-slate-200/50 dark:border-slate-800/50 max-w-sm">
               <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Connect:</span>
               <a
-                href="https://github.com"
+                href="https://github.com/sriabhi12345"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all duration-200"
+                aria-label="GitHub Profile"
               >
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/abhishek-srivastava-a0729b104/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all duration-200"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin size={20} />
               </a>
@@ -203,6 +206,8 @@ export const Hero: React.FC = () => {
                     {'\n'}
                     {`  architecture: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
+                    {`  certification: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
+                    {'\n'}
                     {`  performance: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
                     <span className="text-[#89ddff]">{`}`}</span>
@@ -218,6 +223,8 @@ export const Hero: React.FC = () => {
                     {`  experience: `}<span className="text-[#c3e88d]">'3+ Years'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
                     {`  architecture: `}<span className="text-[#c3e88d]">'Fabric + TurboModules + JSI'</span><span className="text-[#89ddff]">,</span>
+                    {'\n'}
+                    {`  certification: `}<span className="text-[#c3e88d]">'CDAC (PG-DMC)'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
                     {`  performance: `}<span className="text-[#c3e88d]">'Hermes JIT + 60 FPS Reanimated'</span>
                     {'\n'}

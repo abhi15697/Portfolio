@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
           {/* Socials & Back to Top */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/sriabhi12345"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-400 hover:text-primary-indigo dark:hover:text-primary-cyan rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
               <Github size={18} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/abhishek-srivastava-a0729b104/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-400 hover:text-primary-indigo dark:hover:text-primary-cyan rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"

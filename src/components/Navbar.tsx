@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
           {/* Actions: Socials, Theme Toggle, Resume Download */}
           <div className="hidden md:flex items-center space-x-3">
             <a
-              href="https://github.com"
+              href="https://github.com/sriabhi12345"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan transition-colors"
@@ -193,18 +193,20 @@ export const Navbar: React.FC = () => {
 
                 <div className="flex justify-center space-x-6 pt-4">
                   <a
-                    href="https://github.com"
+                    href="https://github.com/sriabhi12345"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan"
+                    aria-label="GitHub Profile"
                   >
                     <Github size={24} />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/abhishek-srivastava-a0729b104/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-slate-500 hover:text-primary-indigo dark:text-slate-400 dark:hover:text-primary-cyan"
+                    aria-label="LinkedIn Profile"
                   >
                     <Linkedin size={24} />
                   </a>
