@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+  
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 dark:bg-slate-800 rounded-full transition-colors hover:bg-slate-400 dark:hover:bg-slate-700;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphism styling */
+  .glass-card-dark {
+    background: rgba(22, 31, 51, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .glass-nav-dark {
+    background: rgba(10, 13, 22, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-nav-light {
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* Decorative glow effects */
+  .neon-border-cyan {
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+    border-color: rgba(6, 182, 212, 0.4);
+  }
+
+  .neon-border-indigo {
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  .gradient-text-indigo-cyan {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-indigo via-primary-violet to-primary-cyan;
+  }
+
+  .gradient-text-cyan-fuchsia {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-cyan via-primary-violet to-primary-fuchsia;
+  }
+}
+
+/* Custom styles for animations and dot grid background */
+.bg-grid-pattern-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-grid-pattern-light {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Grid lines for developer look */
+.tech-lines {
+  background: 
+    linear-gradient(90deg, rgba(6, 182, 212, 0.02) 1px, transparent 1px) 0 0 / 40px 100%,
+    linear-gradient(rgba(6, 182, 212, 0.02) 1px, transparent 1px) 0 0 / 100% 40px;
+}
+
+/* Custom interactive code styling */
+.code-window {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
