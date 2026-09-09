@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Layers, Cpu } from 'lucide-react';
+import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Layers, Cpu, Smartphone, Store, TrendingUp, Package } from 'lucide-react';
 
 interface Project {
   name: string;
@@ -11,6 +11,8 @@ interface Project {
   links: {
     github?: string;
     live?: string;
+    android?: string;
+    ios?: string;
   };
   visualMockup: React.ReactNode;
 }
@@ -19,13 +21,20 @@ export const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       name: 'Sarwa',
-      tagline: 'AI-Powered Mobile E-Commerce & Delivery App',
-      description: 'A premium cross-platform React Native shopping and delivery application featuring thousands of products, trusted brands, real-time courier order tracking via Google Maps, Razorpay/Stripe checkout, and rich FCM push notifications.',
-      technologies: ['React Native', 'TypeScript', 'Redux Toolkit', 'Google Maps SDK', 'Firebase FCM', 'Razorpay Payments', 'AsyncStorage'],
-      features: ['Product browsing, live search filtering & cart flow', 'Secure checkout with multiple payment gateways', 'Real-time courier GPS tracking with background maps', 'Background/Foreground FCM push notifications'],
+      tagline: 'AI-Powered Quick Commerce & Delivery App (iOS & Android)',
+      description: 'An all-in-one AI-powered mobile shopping and doorstep delivery application for food, groceries, daily essentials, and local home services. Offers 5,000+ products across 200+ trusted brands with smart AI-driven recommendations, live Google Maps courier tracking, express checkout, and instant customer notifications.',
+      technologies: ['React Native', 'TypeScript', 'Redux Toolkit', 'Google Maps SDK', 'Firebase FCM', 'Payment Gateway', 'AsyncStorage & MMKV', 'REST APIs', 'Android & iOS'],
+      features: [
+        '5,000+ products across 200+ trusted brands with smart AI recommendations',
+        'Real-time live order tracking with background Google Maps geolocation',
+        'Instant multi-category shopping (Groceries, Food, Bakery & Home Services)',
+        'Secure multi-mode digital payments & instant checkout pipeline',
+        'Automated FCM background/foreground push notifications for dispatch & delivery',
+        'Production releases on Apple App Store & Google Play Store',
+      ],
       links: {
-        github: 'https://github.com',
-        live: 'https://play.google.com',
+        android: 'https://play.google.com/store/apps/details?id=com.sarwa&hl=en_IN',
+        ios: 'https://apps.apple.com/us/app/sarwa-online-shopping-app/id1542372939',
       },
       visualMockup: (
         <div className="w-full h-full bg-[#111726] p-4 flex flex-col justify-between font-sans text-xs relative overflow-hidden rounded-xl border border-slate-800">
@@ -67,13 +76,86 @@ export const Projects: React.FC = () => {
       ),
     },
     {
-      name: 'No Stress Impress',
-      tagline: 'Cross-Platform Mobile Healthcare & Dental App',
-      description: 'A native mobile healthcare application built with React Native featuring hardware camera access, multipart medical scan upload, patient management, and secure biometric authentication.',
-      technologies: ['React Native', 'TypeScript', 'Native Camera API', 'Image Upload SDK', 'REST APIs', 'React Navigation v6'],
-      features: ['Secure user account registration & biometrics', 'Native Camera API integration for diagnostic scans', 'Optimized multi-part image uploads to cloud endpoints', 'Butter-smooth mobile UI with responsive layouts'],
+      name: 'Sarwa Vendor App',
+      tagline: 'AI-Powered Merchant & Inventory Management Mobile App (iOS & Android)',
+      description: 'A cross-platform React Native enterprise application empowering local merchants, grocery stores, and restaurants to manage store operations. Features real-time order processing, live stock inventory management, daily sales intelligence, promotional offer campaigns, multi-tier staff role assignment, and instant delivery alerts.',
+      technologies: ['React Native', 'TypeScript', 'Redux Toolkit', 'Real-Time WebSockets', 'Firebase FCM', 'REST APIs', 'AsyncStorage & MMKV', 'Android & iOS'],
+      features: [
+        'Real-time order pipeline & instant delivery dispatch status updates',
+        'Smart inventory control with live stock availability management',
+        'Sales analytics & business intelligence reports with revenue trends',
+        'Promotional offer engine & customer loyalty campaign tools',
+        'Multi-tier staff role assignment & permissions management',
+        'Production releases on Apple App Store & Google Play Store',
+      ],
       links: {
-        github: 'https://github.com',
+        android: 'https://play.google.com/store/apps/details?id=com.sarwavendor&hl=en_IN',
+        ios: 'https://apps.apple.com/in/app/sarwa-vendor-app/id6747668665',
+      },
+      visualMockup: (
+        <div className="w-full h-full bg-[#111726] p-4 flex flex-col justify-between font-sans text-xs relative overflow-hidden rounded-xl border border-slate-800">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+            <div className="flex items-center gap-1.5">
+              <Store size={14} className="text-emerald-400" />
+              <span className="font-bold text-white tracking-wide text-[10px]">SARWA VENDOR APP</span>
+            </div>
+            <span className="text-[9px] px-2 py-0.5 bg-emerald-500/10 text-emerald-400 font-semibold rounded-full border border-emerald-500/20">Store Open</span>
+          </div>
+
+          {/* Metric Stats Cards */}
+          <div className="my-2 space-y-2 flex-1 flex flex-col justify-between">
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-[#1b2234] p-2 rounded-lg border border-slate-800">
+                <div className="flex items-center justify-between text-[8px] text-slate-400 mb-0.5">
+                  <span>Today's Sales</span>
+                  <TrendingUp size={10} className="text-emerald-400" />
+                </div>
+                <span className="text-xs font-bold text-white">₹18,450</span>
+              </div>
+              <div className="bg-[#1b2234] p-2 rounded-lg border border-slate-800">
+                <div className="flex items-center justify-between text-[8px] text-slate-400 mb-0.5">
+                  <span>Active Orders</span>
+                  <Package size={10} className="text-primary-cyan" />
+                </div>
+                <span className="text-xs font-bold text-white">42 Orders</span>
+              </div>
+            </div>
+
+            {/* Live Order Card */}
+            <div className="bg-darkBg-card/90 p-2 rounded-lg border border-slate-700/60 flex items-center justify-between">
+              <div className="flex flex-col text-[8px]">
+                <span className="font-bold text-slate-200">#ORD-8942 · 3 Items</span>
+                <span className="text-emerald-400 font-medium">New Order · ₹1,240</span>
+              </div>
+              <span className="px-2 py-0.5 bg-emerald-500/15 text-emerald-400 text-[8px] font-bold rounded">Accept & Pack</span>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="flex items-center justify-between pt-1 border-t border-slate-800/80 text-[8px] text-slate-400">
+            <span>Inventory: 450 items live</span>
+            <span className="text-primary-cyan font-bold">Insights: +24% this week</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      name: 'No Stress Impress',
+      tagline: 'At-Home Dental Impression & Healthcare Mobile App (iOS & Android)',
+      description: 'An interactive mobile healthcare application guiding patients through taking accurate at-home dental impressions using boil-and-bite trays. Features step-by-step video tutorials, custom high-resolution camera modules for diagnostic dental photo capture, client-side image compression, patient scan submission pipelines, and secure cloud sync.',
+      technologies: ['React Native', 'TypeScript', 'Redux Toolkit', 'Native Camera API', 'Video Player SDK', 'Image Compression', 'REST APIs', 'Android & iOS'],
+      features: [
+        'Step-by-step interactive video tutorial player with guided dental impression workflows',
+        'Native Device Camera API integration for capturing diagnostic dental impression photos',
+        'Automated client-side image compression & optimized multipart cloud upload pipeline',
+        'Secure patient account management, submission history, and consultant verification',
+        'Responsive, accessible cross-platform mobile UI built for iOS and Android',
+        'Production releases on Apple App Store & Google Play Store',
+      ],
+      links: {
+        android: 'https://play.google.com/store/apps/details?id=com.nostressimpressapp&hl=en_IN',
+        ios: 'https://apps.apple.com/in/app/no-stress-impress/id6736971437',
       },
       visualMockup: (
         <div className="w-full h-full bg-[#111726] p-4 flex flex-col justify-between font-sans text-xs relative overflow-hidden rounded-xl border border-slate-800">
@@ -81,30 +163,30 @@ export const Projects: React.FC = () => {
           <div className="flex items-center justify-between border-b border-slate-800 pb-2">
             <div className="flex items-center gap-1.5">
               <Activity size={14} className="text-primary-fuchsia" />
-              <span className="font-bold text-white tracking-wide text-[10px]">DENTAL CARE MOBILE</span>
+              <span className="font-bold text-white tracking-wide text-[10px]">NO STRESS IMPRESS</span>
             </div>
-            <span className="text-[9px] px-2 py-0.5 bg-primary-fuchsia/10 text-primary-fuchsia font-semibold rounded-full border border-primary-fuchsia/20">Camera Active</span>
+            <span className="text-[9px] px-2 py-0.5 bg-primary-fuchsia/10 text-primary-fuchsia font-semibold rounded-full border border-primary-fuchsia/20">iOS & Android</span>
           </div>
           {/* Camera Upload Section */}
           <div className="my-2 bg-[#1b2234] rounded-lg p-3 flex-1 flex flex-col items-center justify-center relative border border-slate-800">
             <div className="w-10 h-10 rounded-full bg-primary-fuchsia/10 flex items-center justify-center text-primary-fuchsia mb-2 border border-primary-fuchsia/20">
               <Camera size={18} />
             </div>
-            <span className="text-[9px] font-bold text-slate-200">Dental Scan Camera Upload</span>
-            <span className="text-[8px] text-slate-400 mt-0.5">JPEG / PNG format accepted</span>
+            <span className="text-[9px] font-bold text-slate-200">Dental Impression Scan Capture</span>
+            <span className="text-[8px] text-slate-400 mt-0.5">Step 3 of 4: Upper Tray Photo Upload</span>
             {/* Mock upload progress */}
             <div className="w-full bg-slate-800 rounded-full h-1 mt-3 overflow-hidden">
               <div className="bg-primary-fuchsia h-full w-3/4 rounded-full" />
             </div>
             <div className="flex justify-between w-full mt-1.5 text-[7px] text-slate-400 font-mono">
-              <span>scan_08132026.png</span>
-              <span>75%</span>
+              <span>scan_impression_hd.jpg</span>
+              <span>75% Uploaded</span>
             </div>
           </div>
           {/* Footer Details */}
           <div className="flex items-center justify-between text-[8px] pt-1">
-            <span className="text-slate-400">Dr. Abhishek K. (Consultant)</span>
-            <span className="text-primary-fuchsia font-bold">Upload Complete</span>
+            <span className="text-slate-400">Step-by-Step Video Guide</span>
+            <span className="text-primary-fuchsia font-bold">Verified & Syncing</span>
           </div>
         </div>
       ),
@@ -254,16 +336,27 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Project links buttons */}
-                <div className="flex items-center gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-800/30">
-                  {proj.links.github && (
+                <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200/50 dark:border-slate-800/30">
+                  {proj.links.android && (
                     <a
-                      href={proj.links.github}
+                      href={proj.links.android}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-300 hover:border-slate-800 dark:border-slate-800 dark:hover:border-slate-600 rounded-full bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 transition-all active:scale-95"
+                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full hover:shadow-md hover:scale-102 active:scale-95 transition-all"
                     >
-                      <Github size={14} />
-                      <span>Code Repository</span>
+                      <Smartphone size={14} />
+                      <span>Google Play Store</span>
+                    </a>
+                  )}
+                  {proj.links.ios && (
+                    <a
+                      href={proj.links.ios}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-primary-indigo to-primary-cyan rounded-full hover:shadow-md hover:scale-102 active:scale-95 transition-all"
+                    >
+                      <ExternalLink size={14} />
+                      <span>Apple App Store</span>
                     </a>
                   )}
                   {proj.links.live && (
@@ -275,6 +368,17 @@ export const Projects: React.FC = () => {
                     >
                       <ExternalLink size={14} />
                       <span>Live App Store</span>
+                    </a>
+                  )}
+                  {proj.links.github && (
+                    <a
+                      href={proj.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-300 hover:border-slate-800 dark:border-slate-800 dark:hover:border-slate-600 rounded-full bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 transition-all active:scale-95"
+                    >
+                      <Github size={14} />
+                      <span>Code Repository</span>
                     </a>
                   )}
                 </div>

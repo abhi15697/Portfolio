@@ -1,8 +1,15 @@
-import React from 'react';
-import { Download, Award } from 'lucide-react';
-import resumePdf from '../../Abhishek_React_Native.pdf';
+import React, { useState } from 'react';
+import { Download, Award, Loader2 } from 'lucide-react';
+import { generateAndDownloadResumePdf } from '../utils/downloadResume';
 
 export const ResumeCTA: React.FC = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadResume = async () => {
+    if (isDownloading) return;
+    await generateAndDownloadResumePdf(setIsDownloading);
+  };
+
   return (
     <section className="relative py-20 bg-gradient-to-r from-primary-indigo/90 to-primary-cyan/90 text-white overflow-hidden">
       {/* Decorative Blur Blob */}
@@ -22,19 +29,28 @@ export const ResumeCTA: React.FC = () => {
           Download my React Native Developer resume to review my project deliverables, mobile architecture accomplishments, and store delivery milestones.
         </p>
 
-        {/* Direct Download Button */}
+        {/* Dynamic HTML-to-PDF Download Button */}
         <div className="flex justify-center pt-2">
-          <a
-            href={resumePdf}
-            download="Abhishek_Kumar_Srivastava_ReactNative_CV.pdf"
-            className="flex items-center gap-2.5 px-8 py-4 text-sm sm:text-base font-bold text-primary-indigo bg-white rounded-full hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+          <button
+            type="button"
+            onClick={handleDownloadResume}
+            disabled={isDownloading}
+            className="flex items-center gap-2.5 px-8 py-4 text-sm sm:text-base font-bold text-primary-indigo bg-white rounded-full hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer disabled:opacity-75 disabled:cursor-wait"
           >
-            <Download size={18} />
-            <span>Download React Native CV</span>
-          </a>
+            {isDownloading ? (
+              <>
+                <Loader2 size={18} className="animate-spin text-primary-indigo" />
+                <span>Generating PDF...</span>
+              </>
+            ) : (
+              <>
+                <Download size={18} />
+                <span>Download React Native CV</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
     </section>
   );
 };
-

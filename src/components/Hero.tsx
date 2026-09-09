@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Download, ArrowRight, CheckCircle2, Terminal, Cpu } from 'lucide-react';
-import resumePdf from '../../Abhishek_React_Native.pdf';
+import { Github, Linkedin, Download, ArrowRight, CheckCircle2, Terminal, Cpu, Loader2 } from 'lucide-react';
+import { generateAndDownloadResumePdf } from '../utils/downloadResume';
 
 export const Hero: React.FC = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadResume = async () => {
+    if (isDownloading) return;
+    await generateAndDownloadResumePdf(setIsDownloading);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,15 +104,25 @@ export const Hero: React.FC = () => {
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
 
-              {/* Direct Resume download */}
-              <a
-                href={resumePdf}
-                download="Abhishek_Kumar_Srivastava_ReactNative_CV.pdf"
-                className="flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 dark:text-slate-300 bg-slate-200/60 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 rounded-full hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200"
+              {/* Dynamic Resume download */}
+              <button
+                type="button"
+                onClick={handleDownloadResume}
+                disabled={isDownloading}
+                className="flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 dark:text-slate-300 bg-slate-200/60 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 rounded-full hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 disabled:opacity-70 disabled:cursor-wait cursor-pointer"
               >
-                <Download size={18} />
-                <span>Download Resume</span>
-              </a>
+                {isDownloading ? (
+                  <>
+                    <Loader2 size={18} className="animate-spin text-primary-indigo dark:text-primary-cyan" />
+                    <span>Generating PDF...</span>
+                  </>
+                ) : (
+                  <>
+                    <Download size={18} />
+                    <span>Download Resume</span>
+                  </>
+                )}
+              </button>
 
               <a
                 href="#contact"
