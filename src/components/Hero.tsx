@@ -29,6 +29,19 @@ export const Hero: React.FC = () => {
 
 
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      window.history.pushState(null, '', href);
+    }
+  };
+
   const highlights = [
     'CDAC Certified (PG-DMC)',
     '3+ Years React Native',
@@ -62,10 +75,10 @@ export const Hero: React.FC = () => {
 
             {/* Title / Name */}
             <div className="space-y-2">
-              <motion.h2 variants={itemVariants} className="text-xl sm:text-2xl font-outfit font-semibold text-slate-500 dark:text-slate-400 tracking-wide">
+              <motion.h2 variants={itemVariants} className="text-lg sm:text-2xl font-outfit font-semibold text-slate-500 dark:text-slate-400 tracking-wide">
                 Hi, my name is
               </motion.h2>
-              <motion.h1 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-outfit font-extrabold tracking-tight">
+              <motion.h1 variants={itemVariants} className="text-3xl sm:text-5xl md:text-6xl font-outfit font-extrabold tracking-tight">
                 <span className="block text-slate-800 dark:text-white">
                   Abhishek Kumar
                 </span>
@@ -77,29 +90,30 @@ export const Hero: React.FC = () => {
 
             {/* Headline & Subtitle */}
             <div className="space-y-4 max-w-2xl">
-              <motion.h3 variants={itemVariants} className="text-2xl sm:text-3xl font-outfit font-bold text-slate-700 dark:text-slate-200">
+              <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-outfit font-bold text-slate-700 dark:text-slate-200">
                 React Native Mobile Developer (iOS & Android)
               </motion.h3>
-              <motion.p variants={itemVariants} className="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+              <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
                 Building high-performance, production-ready mobile applications for iOS and Android with React Native and TypeScript. Deeply specialized in React Native New Architecture (Fabric & TurboModules), Hermes engine optimization, custom native bridges, and fluid 60 FPS mobile user experiences.
               </motion.p>
             </div>
 
             {/* Key Highlights */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-x-6 gap-y-2.5 pt-2">
+            <motion.div variants={itemVariants} className="flex flex-wrap gap-x-5 gap-y-2 pt-2">
               {highlights.map((highlight, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300 font-medium">
-                  <CheckCircle2 size={16} className="text-primary-cyan" />
+                <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium">
+                  <CheckCircle2 size={15} className="text-primary-cyan flex-shrink-0" />
                   <span>{highlight}</span>
                 </div>
               ))}
             </motion.div>
 
             {/* CTAs */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 pt-4 items-center">
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 items-stretch sm:items-center">
               <a
                 href="#projects"
-                className="group flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 rounded-full hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
+                onClick={(e) => handleNavClick(e, '#projects')}
+                className="group flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100 rounded-full hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
               >
                 <span>View Projects</span>
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
@@ -110,7 +124,7 @@ export const Hero: React.FC = () => {
                 type="button"
                 onClick={handleDownloadResume}
                 disabled={isDownloading}
-                className="flex items-center gap-2 px-6 py-3.5 text-base font-semibold text-slate-700 dark:text-slate-300 bg-slate-200/60 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 rounded-full hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 disabled:opacity-70 disabled:cursor-wait cursor-pointer"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-300 bg-slate-200/60 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 rounded-full hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 disabled:opacity-70 disabled:cursor-wait cursor-pointer"
               >
                 {isDownloading ? (
                   <>
@@ -127,14 +141,15 @@ export const Hero: React.FC = () => {
 
               <a
                 href="#contact"
-                className="px-6 py-3.5 text-base font-semibold text-slate-700 hover:text-primary-indigo dark:text-slate-300 dark:hover:text-primary-cyan hover:underline transition-all duration-200"
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className="text-center px-4 py-2.5 sm:py-3.5 text-sm sm:text-base font-semibold text-slate-700 hover:text-primary-indigo dark:text-slate-300 dark:hover:text-primary-cyan hover:underline transition-all duration-200 cursor-pointer"
               >
                 Contact Me
               </a>
             </motion.div>
 
             {/* Social icons */}
-            <motion.div variants={itemVariants} className="flex items-center space-x-4 pt-4 border-t border-slate-200/50 dark:border-slate-800/50 max-w-sm">
+            <motion.div variants={itemVariants} className="flex items-center space-x-4 pt-3 border-t border-slate-200/50 dark:border-slate-800/50 max-w-sm">
               <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Connect:</span>
               <a
                 href="https://github.com/sriabhi12345"

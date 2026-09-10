@@ -70,19 +70,19 @@ export const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="p-8 sm:p-12 rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/40 dark:bg-darkBg-card/40 backdrop-blur shadow-sm hover:shadow-xl dark:hover:shadow-glass-dark transition-all duration-300"
+            className="p-5 sm:p-10 md:p-12 rounded-2xl sm:rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/40 dark:bg-darkBg-card/40 backdrop-blur shadow-sm hover:shadow-xl dark:hover:shadow-glass-dark transition-all duration-300"
           >
-            <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-              <h3 className="text-2xl sm:text-3xl font-outfit font-extrabold text-slate-800 dark:text-white">
+            <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-2 sm:space-y-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-outfit font-extrabold text-slate-800 dark:text-white">
                 Let's build something great together.
               </h3>
-              <p className="text-sm sm:text-base text-slate-650 dark:text-slate-400 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm md:text-base text-slate-650 dark:text-slate-400 leading-relaxed font-light">
                 Feel free to reach out directly if you're looking for a React Native mobile developer, cross-platform engineer for iOS & Android, or want to discuss a new app build or architecture migration.
               </p>
             </div>
 
             {/* 3 Contact Info Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {contactMethods.map((method, idx) => (
                 <motion.div
                   key={method.label}
@@ -90,10 +90,10 @@ export const Contact: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="flex flex-col justify-between p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-secondary/50 shadow-sm hover:border-slate-300 dark:hover:border-slate-700/80 transition-all group"
+                  className="flex flex-col justify-between p-5 sm:p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-secondary/50 shadow-sm hover:border-slate-300 dark:hover:border-slate-700/80 transition-all group"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-200">
                       {method.icon}
                     </div>
                     <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider block mb-1">
@@ -102,17 +102,17 @@ export const Contact: React.FC = () => {
                     {method.href ? (
                       <a
                         href={method.href}
-                        className="text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors break-words block"
+                        className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors break-words block"
                       >
                         {method.value}
                       </a>
                     ) : (
-                      <span className="text-sm font-bold text-slate-800 dark:text-slate-100 block">
+                      <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-100 block">
                         {method.value}
                       </span>
                     )}
                     {method.subValue && (
-                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1 block font-light">
+                      <span className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 block font-light">
                         {method.subValue}
                       </span>
                     )}
@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
 
                   {/* Actions for each card */}
                   {method.actionText && (
-                    <div className="flex items-center gap-2 pt-4 mt-4 border-t border-slate-100 dark:border-slate-800/80">
+                    <div className="flex items-center gap-2 pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-slate-100 dark:border-slate-800/80">
                       <a
                         href={method.href}
                         className="text-xs font-semibold text-primary-indigo dark:text-primary-cyan hover:underline inline-flex items-center gap-1"
@@ -148,18 +148,18 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Bottom Connect / Socials Bar */}
-            <div className="mt-10 pt-8 border-t border-slate-200/60 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-slate-200/60 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                   Connect on Socials:
                 </span>
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-2.5 sm:gap-3">
                 <a
                   href="https://github.com/sriabhi12345"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95"
+                  className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95"
                 >
                   <Github size={16} />
                   <span>GitHub Profile</span>
@@ -168,7 +168,7 @@ export const Contact: React.FC = () => {
                   href="https://www.linkedin.com/in/abhishek-srivastava-a0729b104/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95"
+                  className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-slate-750 dark:text-slate-350 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95"
                 >
                   <Linkedin size={16} />
                   <span>LinkedIn Profile</span>

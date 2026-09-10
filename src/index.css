@@ -3,10 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   body {
     @apply transition-colors duration-300;
   }
-  
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
   /* Custom scrollbar styling */
   ::-webkit-scrollbar {
     width: 8px;

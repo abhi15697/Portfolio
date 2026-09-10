@@ -73,28 +73,28 @@ export const Expertise: React.FC = () => {
         </div>
 
         {/* Tab Selection */}
-        <div className="flex justify-center mb-12">
-          <div className="inline-flex p-1 rounded-xl bg-slate-200/60 dark:bg-slate-800/60 backdrop-blur border border-slate-350 dark:border-slate-700/50">
+        <div className="flex justify-center mb-10 sm:mb-12">
+          <div className="inline-flex flex-col sm:flex-row p-1 rounded-2xl sm:rounded-xl bg-slate-200/60 dark:bg-slate-800/60 backdrop-blur border border-slate-350 dark:border-slate-700/50 w-full sm:w-auto gap-1">
             <button
               onClick={() => setActiveTab('arch')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
+              className={`flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-lg text-xs sm:text-sm font-bold transition-all duration-200 ${
                 activeTab === 'arch'
                   ? 'bg-white dark:bg-darkBg-card text-primary-indigo dark:text-primary-cyan shadow-sm'
                   : 'text-slate-650 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
-              <Workflow size={16} />
+              <Workflow size={15} />
               <span>Architecture (New vs Old)</span>
             </button>
             <button
               onClick={() => setActiveTab('perf')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
+              className={`flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-lg text-xs sm:text-sm font-bold transition-all duration-200 ${
                 activeTab === 'perf'
                   ? 'bg-white dark:bg-darkBg-card text-primary-indigo dark:text-primary-cyan shadow-sm'
                   : 'text-slate-650 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
-              <Zap size={16} />
+              <Zap size={15} />
               <span>Performance Optimizations</span>
             </button>
           </div>
@@ -129,11 +129,11 @@ export const Expertise: React.FC = () => {
                         <span>Old Architecture</span>
                         <span className="text-red-400">Bottleneck</span>
                       </div>
-                      <div className="flex items-center gap-1.5 font-mono text-[9px] text-slate-650 dark:text-slate-400">
+                      <div className="flex flex-wrap items-center gap-1.5 font-mono text-[9px] text-slate-650 dark:text-slate-400">
                         <span>JS Thread</span>
-                        <ChevronRight size={10} className="text-slate-400" />
+                        <ChevronRight size={10} className="text-slate-400 flex-shrink-0" />
                         <span className="px-1.5 py-0.5 bg-red-400/10 text-red-500 dark:text-red-400 rounded flex items-center gap-0.5"><FileJson size={8} /> JSON Stringify</span>
-                        <ChevronRight size={10} className="text-slate-400" />
+                        <ChevronRight size={10} className="text-slate-400 flex-shrink-0" />
                         <span>Native UI</span>
                       </div>
                     </div>
@@ -144,11 +144,11 @@ export const Expertise: React.FC = () => {
                         <span>New Architecture</span>
                         <span className="text-emerald-400">Sync / Fast</span>
                       </div>
-                      <div className="flex items-center gap-1.5 font-mono text-[9px] text-slate-700 dark:text-slate-350">
+                      <div className="flex flex-wrap items-center gap-1.5 font-mono text-[9px] text-slate-700 dark:text-slate-350">
                         <span>JS Core</span>
-                        <ChevronRight size={10} className="text-primary-cyan" />
+                        <ChevronRight size={10} className="text-primary-cyan flex-shrink-0" />
                         <span className="px-1.5 py-0.5 bg-primary-cyan/15 text-primary-cyan font-bold rounded flex items-center gap-0.5"><Shuffle size={8} /> JSI C++ Pointer</span>
-                        <ChevronRight size={10} className="text-primary-cyan" />
+                        <ChevronRight size={10} className="text-primary-cyan flex-shrink-0" />
                         <span>Fabric / Native UI</span>
                       </div>
                     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Smartphone, Store, TrendingUp, Package, Users, MessageSquare, Heart, Sparkles, Layers } from 'lucide-react';
+import { Github, ExternalLink, ShoppingCart, MapPin, Activity, Camera, Smartphone, Store, TrendingUp, Package, Users, MessageSquare, Heart, Sparkles, Layers, Compass } from 'lucide-react';
+
 
 interface Project {
   name: string;
@@ -136,6 +137,86 @@ export const Projects: React.FC = () => {
           <div className="flex items-center justify-between pt-1 border-t border-slate-800/80 text-[8px] text-slate-400">
             <span>Inventory: 450 items live</span>
             <span className="text-primary-cyan font-bold">Insights: +24% this week</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      name: 'Sharehood',
+      tagline: 'Hyper-Local Community Marketplace & Discovery Mobile App (Android)',
+      description: 'A hyper-local cross-platform mobile application and discovery platform connecting local communities, neighborhood vendors, and residents. Features live geolocation radius filtering, real-time local product catalogs, vendor messaging, fast in-app item requests, and interactive Google Maps vendor discovery.',
+      technologies: ['React Native', 'TypeScript', 'Google Maps SDK', 'Geolocation Services', 'Redux Toolkit', 'Firebase FCM', 'REST APIs', 'Android'],
+      features: [
+        'Hyper-local vendor discovery with live GPS radius search & interactive Google Maps integration',
+        'Real-time local product catalog browsing, instant item inquiries, and direct store connect',
+        'Location-based neighborhood feeds with push notification alerts for local deals & updates',
+        'Integrated in-app messaging and contact dispatch for neighborhood merchants & consumers',
+        'Optimized FlatList pagination with offline caching for quick low-bandwidth browsing',
+        'Production release deployed on Google Play Store',
+      ],
+      links: {
+        android: 'https://play.google.com/store/apps/details?id=com.getitnearby',
+      },
+      visualMockup: (
+        <div className="w-full h-full bg-[#111726] p-4 flex flex-col justify-between font-sans text-xs relative overflow-hidden rounded-xl border border-slate-800">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+            <div className="flex items-center gap-1.5">
+              <Compass size={14} className="text-teal-400" />
+              <span className="font-bold text-white tracking-wide text-[10px]">SHAREHOOD APP</span>
+            </div>
+            <span className="text-[9px] px-2 py-0.5 bg-teal-500/10 text-teal-400 font-semibold rounded-full border border-teal-500/20">Android • Live</span>
+          </div>
+
+          {/* Body: Radius & Nearby Stores */}
+          <div className="my-2 space-y-2 flex-1 flex flex-col justify-between">
+            <div className="bg-[#1b2234] p-2 rounded-lg border border-slate-800">
+              <div className="flex items-center justify-between text-[8px] text-slate-400 mb-1">
+                <span className="flex items-center gap-1">
+                  <MapPin size={10} className="text-teal-400" />
+                  <span>Nearby Discovery</span>
+                </span>
+                <span className="px-1.5 py-0.2 bg-teal-500/20 text-teal-300 font-mono text-[8px] rounded">Radius: 2.5 km</span>
+              </div>
+              <div className="flex items-center justify-between text-[9px] font-bold text-slate-200">
+                <span>Active Neighborhood Vendors</span>
+                <span className="text-teal-400 font-mono">24 Open</span>
+              </div>
+            </div>
+
+            {/* Store Listing Snippet */}
+            <div className="space-y-1.5">
+              <div className="bg-darkBg-card/90 p-1.5 rounded-lg border border-slate-700/60 flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <Store size={11} className="text-primary-cyan" />
+                  <div className="flex flex-col text-[8px]">
+                    <span className="font-bold text-slate-200">Fresh Organic Mart</span>
+                    <span className="text-slate-400 text-[7px]">Groceries · 400m away</span>
+                  </div>
+                </div>
+                <span className="px-1.5 py-0.5 bg-emerald-500/15 text-emerald-400 text-[7px] font-bold rounded">In Stock</span>
+              </div>
+
+              <div className="bg-darkBg-card/90 p-1.5 rounded-lg border border-slate-700/60 flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <Store size={11} className="text-primary-violet" />
+                  <div className="flex flex-col text-[8px]">
+                    <span className="font-bold text-slate-200">City Artisan Bakery</span>
+                    <span className="text-slate-400 text-[7px]">Bakery & Snacks · 750m</span>
+                  </div>
+                </div>
+                <span className="px-1.5 py-0.5 bg-emerald-500/15 text-emerald-400 text-[7px] font-bold rounded">Open Now</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="flex items-center justify-between pt-1 border-t border-slate-800/80 text-[8px] text-slate-400">
+            <span className="flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-ping" />
+              <span>Live GPS Filtering</span>
+            </span>
+            <span className="text-teal-400 font-bold">Google Maps SDK</span>
           </div>
         </div>
       ),
@@ -304,12 +385,12 @@ export const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6 }}
-              className={`flex flex-col lg:flex-row gap-8 items-stretch p-6 sm:p-8 rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/40 dark:bg-darkBg-card/40 backdrop-blur-sm shadow-sm hover:shadow-xl dark:hover:shadow-glass-dark hover:border-slate-300 dark:hover:border-slate-700/80 transition-all duration-300 ${
+              className={`flex flex-col lg:flex-row gap-6 sm:gap-8 items-stretch p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/40 dark:bg-darkBg-card/40 backdrop-blur-sm shadow-sm hover:shadow-xl dark:hover:shadow-glass-dark hover:border-slate-300 dark:hover:border-slate-700/80 transition-all duration-300 ${
                 idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}
             >
               {/* Left Column: Interactive CSS Mockup */}
-              <div className="lg:w-5/12 h-64 sm:h-72 lg:h-auto min-h-[260px] flex-shrink-0 flex items-center justify-center rounded-2xl bg-slate-100 dark:bg-darkBg-secondary p-3 border border-slate-200 dark:border-slate-800/80 shadow-inner relative overflow-hidden group">
+              <div className="w-full lg:w-5/12 h-64 sm:h-72 lg:h-auto min-h-[250px] sm:min-h-[260px] flex-shrink-0 flex items-center justify-center rounded-2xl bg-slate-100 dark:bg-darkBg-secondary p-2 sm:p-3 border border-slate-200 dark:border-slate-800/80 shadow-inner relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary-cyan/5 to-primary-indigo/5 dark:from-primary-cyan/2 dark:to-primary-indigo/2 transition-opacity duration-300" />
                 <div className="w-full h-full max-w-[340px] max-h-[260px] relative z-10 transition-transform duration-500 group-hover:scale-105">
                   {proj.visualMockup}

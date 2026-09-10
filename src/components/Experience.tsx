@@ -72,11 +72,11 @@ export const Experience: React.FC = () => {
         </div>
 
         {/* Timeline Container */}
-        <div className="max-w-5xl mx-auto relative pl-6 sm:pl-8 before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-200 dark:before:bg-slate-800">
+        <div className="max-w-5xl mx-auto relative pl-7 sm:pl-8 before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-200 dark:before:bg-slate-800">
           {experiences.map((exp, expIdx) => (
             <div key={expIdx} className="relative mb-12">
               {/* Timeline dot */}
-              <div className="absolute -left-[31px] sm:-left-[35px] top-1.5 w-6 h-6 rounded-full bg-white dark:bg-darkBg border-[3px] border-primary-indigo flex items-center justify-center shadow-md">
+              <div className="absolute -left-[35px] top-1.5 w-6 h-6 rounded-full bg-white dark:bg-darkBg border-[3px] border-primary-indigo flex items-center justify-center shadow-md">
                 <Briefcase size={10} className="text-primary-indigo" />
               </div>
 
@@ -89,7 +89,7 @@ export const Experience: React.FC = () => {
                 className="mb-6"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                  <h3 className="text-2xl font-outfit font-extrabold text-slate-800 dark:text-white hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-outfit font-extrabold text-slate-800 dark:text-white hover:text-primary-indigo dark:hover:text-primary-cyan transition-colors">
                     {exp.role}
                   </h3>
                   <div className="inline-flex items-center gap-1.5 text-xs font-bold text-primary-indigo dark:text-primary-cyan bg-primary-indigo/5 dark:bg-primary-cyan/10 px-3 py-1 rounded-full border border-primary-indigo/10 dark:border-primary-cyan/20 w-fit">
