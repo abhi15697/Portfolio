@@ -26,7 +26,7 @@ export const Services: React.FC = () => {
     {
       icon: <Zap size={24} />,
       title: 'Mobile Performance Tuning',
-      desc: 'Eliminate frame drops, profile memory leaks, optimize FlatList virtualization, and achieve butter-smooth 60 FPS mobile user flows.',
+      desc: 'Eliminate frame drops, profile memory leaks, optimize FlatList virtualization, and achieve butter-smooth mobile user flows.',
       colorClass: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
     },
     {

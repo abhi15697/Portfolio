@@ -94,7 +94,7 @@ export const Hero: React.FC = () => {
                 React Native Mobile Developer (iOS & Android)
               </motion.h3>
               <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-                Building high-performance, production-ready mobile applications for iOS and Android with React Native and TypeScript. Deeply specialized in React Native New Architecture (Fabric & TurboModules), Hermes engine optimization, custom native bridges, and fluid 60 FPS mobile user experiences.
+                Building high-performance, production-ready mobile applications for iOS and Android with React Native and TypeScript. Deeply specialized in React Native New Architecture (Fabric & TurboModules), Hermes engine optimization, custom native bridges, and fluid mobile user experiences.
               </motion.p>
             </div>
 
@@ -241,7 +241,7 @@ export const Hero: React.FC = () => {
                     {'\n'}
                     {`  certification: `}<span className="text-[#c3e88d]">'CDAC (PG-DMC)'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  performance: `}<span className="text-[#c3e88d]">'Hermes JIT + 60 FPS Reanimated'</span>
+                    {`  performance: `}<span className="text-[#c3e88d]">'Hermes JIT + Native Reanimated'</span>
                     {'\n'}
                     <span className="text-[#89ddff]">{`};`}</span>
                   </code>

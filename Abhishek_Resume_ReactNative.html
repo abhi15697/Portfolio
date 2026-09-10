@@ -7,34 +7,42 @@
     <title>Abhishek Kumar Srivastava - React Native Developer CV</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
+            padding: 0;
             background: #f4f4f4;
-            line-height: 1.4;
+            line-height: 1.35;
             color: #222;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
         .container {
             width: 794px;
             margin: auto;
             background: #fff;
-            padding: 18px 24px;
+            padding: 16px 24px;
             box-sizing: border-box;
         }
 
         h1 {
-            font-size: 22px;
+            font-size: 21px;
             text-align: center;
-            margin: 4px 0;
-            color: #111;
+            margin: 0 0 2px 0;
+            color: #0f172a;
+            letter-spacing: -0.3px;
         }
 
         .header p {
-            font-size: 11px;
+            font-size: 10.5px;
             text-align: center;
-            margin: 3px 0;
-            color: #444;
+            margin: 2px 0;
+            color: #475569;
         }
 
         .header a {
@@ -44,64 +52,79 @@
         }
 
         h2 {
-            font-size: 13px;
-            margin: 12px 0 5px;
+            font-size: 11.5px;
+            margin: 8px 0 4px;
             border-bottom: 1.5px solid #0d47a1;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             color: #0d47a1;
-            padding-bottom: 2px;
+            padding-bottom: 1.5px;
+            font-weight: 700;
         }
 
         h3 {
-            font-size: 12px;
-            margin: 5px 0 2px;
+            font-size: 11px;
+            margin: 3px 0 1px;
             display: flex;
             justify-content: space-between;
+            color: #1e293b;
         }
 
         .job-title {
-            font-weight: bold;
+            font-weight: 700;
         }
 
         .job-date {
-            font-weight: normal;
-            font-size: 11px;
-            color: #555;
+            font-weight: 500;
+            font-size: 10.5px;
+            color: #64748b;
         }
 
         p {
-            font-size: 11px;
-            margin: 3px 0;
+            font-size: 10.5px;
+            margin: 2px 0;
+            color: #334155;
         }
 
         ul {
-            padding-left: 16px;
-            margin: 3px 0 6px;
+            padding-left: 14px;
+            margin: 2px 0 4px;
         }
 
         li {
-            font-size: 11px;
-            margin-bottom: 2px;
+            font-size: 10.5px;
+            margin-bottom: 1.5px;
+            color: #334155;
         }
 
         .section {
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
         .skill-group {
-            font-size: 11px;
-            margin-bottom: 3px;
+            font-size: 10.5px;
+            margin-bottom: 2px;
+            color: #334155;
         }
 
         .skill-group strong {
-            color: #111;
+            color: #0f172a;
+        }
+
+        .edu-item {
+            font-size: 10.5px;
+            margin-bottom: 1.5px;
+            color: #334155;
+        }
+
+        .edu-item b {
+            color: #0f172a;
         }
 
         /* A4 Print Optimization */
         @page {
-            size: A4;
-            margin: 8mm;
+            size: A4 portrait;
+            margin: 6mm 8mm;
         }
 
         @media print {
@@ -140,8 +163,15 @@
                 Results-driven CDAC Certified React Native Developer with 3+ years of experience delivering
                 high-performance mobile applications for Android and iOS platforms. Expert in building scalable mobile
                 architectures, cross-platform UI engineering, and integrating real-time GPS tracking. Proven track
-                record in optimizing mobile application performance, reducing bundle sizes by up to 25%, and leading
+                record in optimizing mobile application performance, reducing bundle sizes, and leading
                 end-to-end app development from architecture to store deployment.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Key Strengths</h2>
+            <p>
+                <b>CDAC Certified Mobile Engineer • Cross-Platform Mobile Development (iOS & Android) • Native Bridge & JSI Optimization • App Store & Play Store Releases • Clean Modular Architecture • Offline Caching & State Management • Google Maps & Real-Time GPS</b>
             </p>
         </div>
 
@@ -175,7 +205,7 @@
             </h3>
             <ul>
                 <li>Engineered high-quality cross-platform mobile apps using React Native, reducing launch bundle size
-                    by 25% and improving frame rates to a stable 60 FPS.</li>
+                    and delivering smooth, responsive mobile user interfaces.</li>
                 <li>Architected robust state management systems utilizing Redux Toolkit and Context API to manage
                     complex offline data caching.</li>
                 <li>Integrated GraphQL endpoints, REST APIs, Firebase services, and Razorpay payment SDKs for seamless
@@ -244,17 +274,10 @@
 
         <div class="section">
             <h2>Education & Certification</h2>
-            <p><b>CDAC Certified — PG-Diploma in Mobile Computing (PG-DMC)</b> | Sunbeam Institute (C-DAC ACTS) | 2023
-            </p>
-            <p><b>B.Tech in Electronics & Communication Engineering</b> | PSIT Kanpur | 2017</p>
-            <p><b>Intermediate (12th)</b> | BIC Shahmuhammadpur Candrawar, Ballia | 2013</p>
-            <p><b>High School (10th)</b> | Gyan Peethika Jagdishpur, Ballia | 2010</p>
-        </div>
-
-        <div class="section">
-            <h2>Key Strengths</h2>
-            <p>CDAC Certified Mobile Engineer • Cross-Platform Mobile Development • Native Bridge Optimizations • App
-                Store & Play Store Deployment • Clean Component Architecture • Agile Team Collaboration</p>
+            <div class="edu-item"><b>CDAC Certified — PG-Diploma in Mobile Computing (PG-DMC)</b> | Sunbeam Institute (C-DAC ACTS) | 2023</div>
+            <div class="edu-item"><b>B.Tech in Electronics & Communication Engineering</b> | PSIT Kanpur | 2017</div>
+            <div class="edu-item"><b>Intermediate (12th)</b> | BIC Shahmuhammadpur Candrawar, Ballia | 2013</div>
+            <div class="edu-item"><b>High School (10th)</b> | Gyan Peethika Jagdishpur, Ballia | 2010</div>
         </div>
 
     </div>

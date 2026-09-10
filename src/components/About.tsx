@@ -7,7 +7,7 @@ export const About: React.FC = () => {
     { value: '3+', label: 'Years Experience', desc: 'Dedicated React Native mobile engineering', icon: <Calendar className="text-primary-indigo" size={24} /> },
     { value: 'CDAC', label: 'Certified (PG-DMC)', desc: 'Post Graduate Diploma in Mobile Computing (Sunbeam)', icon: <Award className="text-emerald-500" size={24} /> },
     { value: 'Multiple', label: 'Store Releases', desc: 'Live apps shipped on Google Play & App Store', icon: <Smartphone className="text-primary-violet" size={24} /> },
-    { value: '60 FPS', label: 'Hermes Performance', desc: 'JSI direct binding & low memory footprint', icon: <Settings className="text-primary-fuchsia" size={24} /> },
+    { value: 'Hermes', label: 'JSI Performance', desc: 'Direct C++ binding & low memory footprint', icon: <Settings className="text-primary-fuchsia" size={24} /> },
   ];
 
   return (
@@ -55,11 +55,11 @@ export const About: React.FC = () => {
             </h3>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I am a dedicated, <strong className="font-semibold text-slate-800 dark:text-slate-250">CDAC Certified React Native Developer</strong> (PG-Diploma in Mobile Computing from Sunbeam Pune) with <strong className="font-semibold text-slate-800 dark:text-slate-250">3+ years of professional experience</strong> building high-performance, production-grade cross-platform mobile applications for iOS and Android. My engineering focus centers on clean modular architecture, native bridge optimization, and butter-smooth 60 FPS mobile user interfaces.
+              I am a dedicated, <strong className="font-semibold text-slate-800 dark:text-slate-200">CDAC Certified React Native Developer</strong> (PG-Diploma in Mobile Computing from Sunbeam Pune) with <strong className="font-semibold text-slate-800 dark:text-slate-200">3+ years of professional experience</strong> building high-performance, production-grade cross-platform mobile applications for iOS and Android. My engineering focus centers on clean modular architecture, native bridge optimization, and butter-smooth mobile user interfaces.
             </p>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I have extensive hands-on experience integrating complex mobile SDKs and native hardware features including <strong className="font-semibold text-slate-800 dark:text-slate-250">Google Maps SDK, Native Camera APIs, Payment Gateways (Razorpay/Stripe), Biometrics, Firebase FCM Push Notifications</strong>, and REST/GraphQL data layers with robust offline-first caching.
+              I have extensive hands-on experience integrating complex mobile SDKs and native hardware features including <strong className="font-semibold text-slate-800 dark:text-slate-200">Google Maps SDK, Native Camera APIs, Payment Gateways (Razorpay/Stripe), Biometrics, Firebase FCM Push Notifications</strong>, and REST/GraphQL data layers with robust offline-first caching.
             </p>
 
             <div className="space-y-3.5 pt-2">

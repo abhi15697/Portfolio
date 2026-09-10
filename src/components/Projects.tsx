@@ -282,7 +282,7 @@ export const Projects: React.FC = () => {
         'Creator monetization tools, digital tip jars, and exclusive reward tier unlocks',
         'Optimistic UI updates with offline caching via React Query and Redux Toolkit',
         'Interactive live streaming chat, push notifications, and rich media sharing',
-        'High-performance 60 FPS feed scrolling with image pre-fetching and FlatList virtualization',
+        'High-performance feed scrolling with image pre-fetching and FlatList virtualization',
         'Production releases on Apple App Store & Google Play Store',
       ],
       links: {},
