@@ -69,8 +69,8 @@ export const Navbar: React.FC = () => {
             onClick={(e) => handleNavClick(e, '#hero')}
             className="flex items-center space-x-2 sm:space-x-2.5 text-lg sm:text-xl font-outfit font-extrabold tracking-tight group cursor-pointer"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-primary-indigo to-primary-cyan flex items-center justify-center text-white font-mono text-sm sm:text-base font-bold shadow-md shadow-primary-indigo/20 group-hover:scale-105 transition-transform duration-200">
-              A
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-primary-indigo to-primary-cyan flex items-center justify-center text-white font-mono text-xs sm:text-sm font-bold shadow-md shadow-primary-indigo/20 group-hover:scale-105 transition-transform duration-200">
+              AS
             </div>
             <div className="flex flex-col">
               <span className="text-slate-800 dark:text-white font-bold text-sm sm:text-base leading-tight">
