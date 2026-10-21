@@ -1,13 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Calendar, Award, Smartphone, Settings } from 'lucide-react';
+import { Sparkles, Calendar, Award, Smartphone, Settings, GraduationCap, CheckCircle2 } from 'lucide-react';
 
 export const About: React.FC = () => {
   const stats = [
-    { value: '3+', label: 'Years Experience', desc: 'Dedicated React Native mobile engineering', icon: <Calendar className="text-primary-indigo" size={24} /> },
-    { value: 'CDAC', label: 'Certified (PG-DMC)', desc: 'Post Graduate Diploma in Mobile Computing (Sunbeam)', icon: <Award className="text-emerald-500" size={24} /> },
-    { value: 'Multiple', label: 'Store Releases', desc: 'Live apps shipped on Google Play & App Store', icon: <Smartphone className="text-primary-violet" size={24} /> },
-    { value: 'Hermes', label: 'JSI Performance', desc: 'Direct C++ binding & low memory footprint', icon: <Settings className="text-primary-fuchsia" size={24} /> },
+    { value: '3+', label: 'Years Experience', desc: 'Dedicated React Native mobile engineering across Android & iOS', icon: <Calendar className="text-primary-indigo" size={24} /> },
+    { value: 'CDAC', label: 'Certified (PG-DMC)', desc: 'Post Graduate Diploma in Mobile Computing (Sunbeam Institute, C-DAC ACTS)', icon: <Award className="text-emerald-500" size={24} /> },
+    { value: 'Multiple', label: 'Store Releases', desc: 'Live mobile apps shipped on Google Play Store & Apple App Store', icon: <Smartphone className="text-primary-violet" size={24} /> },
+    { value: 'Hermes', label: 'JSI Performance', desc: 'Direct C++ host binding & low-latency offline caching', icon: <Settings className="text-primary-fuchsia" size={24} /> },
+  ];
+
+  const educationList = [
+    {
+      degree: 'PG-Diploma in Mobile Computing (PG-DMC), CDAC Certified',
+      institution: 'Sunbeam Institute (C-DAC ACTS)',
+      year: '2023',
+      highlight: 'Advanced mobile OS architectures, native runtime environments, and scalable systems.',
+    },
+    {
+      degree: 'B.Tech, Electronics & Communication Engineering',
+      institution: 'PSIT Kanpur',
+      year: '2017',
+      highlight: 'Core engineering foundation, computer networks, and microprocessors.',
+    },
+    {
+      degree: 'Intermediate (12th)',
+      institution: 'BIC Shahmuhammadpur Candrawar, Ballia',
+      year: '2013',
+      highlight: 'Physics, Chemistry & Mathematics.',
+    },
+    {
+      degree: 'High School (10th)',
+      institution: 'Gyan Peethika Jagdishpur, Ballia',
+      year: '2010',
+      highlight: 'Foundational secondary school education.',
+    },
   ];
 
   return (
@@ -24,7 +51,7 @@ export const About: React.FC = () => {
             className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-indigo/10 text-primary-indigo dark:text-primary-cyan dark:bg-primary-cyan/10 mb-4"
           >
             <Sparkles size={12} />
-            <span>Professional Summary</span>
+            <span>Professional Profile</span>
           </motion.div>
           
           <motion.h2
@@ -39,8 +66,8 @@ export const About: React.FC = () => {
           <div className="h-1.5 w-16 bg-gradient-to-r from-primary-indigo to-primary-cyan mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Two-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Two-Column Grid: Summary & Stats */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
           
           {/* About Text Block */}
           <motion.div
@@ -51,40 +78,34 @@ export const About: React.FC = () => {
             className="lg:col-span-6 space-y-6"
           >
             <h3 className="text-xl sm:text-2xl font-outfit font-bold text-slate-800 dark:text-slate-200">
-              CDAC Certified React Native Mobile Engineer (iOS & Android)
+              CDAC Certified React Native Developer
             </h3>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I am a dedicated, <strong className="font-semibold text-slate-800 dark:text-slate-200">CDAC Certified React Native Developer</strong> (PG-Diploma in Mobile Computing from Sunbeam Pune) with <strong className="font-semibold text-slate-800 dark:text-slate-200">3+ years of professional experience</strong> building high-performance, production-grade cross-platform mobile applications for iOS and Android. My engineering focus centers on clean modular architecture, native bridge optimization, and butter-smooth mobile user interfaces.
+              Results-driven <strong className="font-semibold text-slate-800 dark:text-slate-200">CDAC Certified React Native Developer</strong> with <strong className="font-semibold text-slate-800 dark:text-slate-200">3+ years of experience</strong> delivering high-performance mobile applications for Android and iOS platforms. Expert in building scalable mobile architectures, cross-platform UI engineering, and integrating real-time GPS tracking.
             </p>
             
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I have extensive hands-on experience integrating complex mobile SDKs and native hardware features including <strong className="font-semibold text-slate-800 dark:text-slate-200">Google Maps SDK, Native Camera APIs, Payment Gateways (Razorpay/Stripe), Biometrics, Firebase FCM Push Notifications</strong>, and REST/GraphQL data layers with robust offline-first caching.
+              Proven track record in optimizing mobile application performance, reducing bundle sizes, and leading end-to-end app development from architecture to store deployment across Google Play Console and Apple App Store.
             </p>
 
             <div className="space-y-3.5 pt-2">
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-500 text-xs font-bold">1</span>
+                <CheckCircle2 size={18} className="text-emerald-500 flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-slate-600 dark:text-slate-300">
-                  <strong>CDAC Certified (PG-DMC):</strong> Advanced Post Graduate Diploma in Mobile Computing from Sunbeam Pune (C-DAC ACTS), establishing strong foundations in mobile OS architectures, memory models, and data structures.
+                  <strong>Core Mobile & Architecture:</strong> Cross-platform mobile development (iOS & Android), Native Bridge & JSI Optimization, Clean Modular Architecture.
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-indigo/10 dark:bg-primary-indigo/20 flex items-center justify-center text-primary-indigo dark:text-primary-cyan text-xs font-bold">2</span>
+                <CheckCircle2 size={18} className="text-primary-indigo flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-slate-600 dark:text-slate-300">
-                  <strong>Store Releases & Native Tooling:</strong> Complete ownership of release builds on Google Play Store & Apple App Store, configuring Gradle, ProGuard, CocoaPods, and Xcode provisioning.
+                  <strong>Real-Time Systems & APIs:</strong> Google Maps API, background GPS location tracking, FCM push notifications, Razorpay payment gateway, Redux Toolkit & GraphQL.
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-cyan/10 dark:bg-primary-cyan/20 flex items-center justify-center text-primary-cyan text-xs font-bold">3</span>
+                <CheckCircle2 size={18} className="text-primary-cyan flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-slate-600 dark:text-slate-300">
-                  <strong>New Architecture (Fabric & TurboModules):</strong> Proven capability upgrading legacy codebases to React Native New Architecture, Hermes JIT bytecode, and synchronous C++ JSI interfaces.
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-fuchsia/10 dark:bg-primary-fuchsia/20 flex items-center justify-center text-primary-fuchsia text-xs font-bold">4</span>
-                <span className="text-sm text-slate-600 dark:text-slate-300">
-                  <strong>Performance & State Management:</strong> Architecting predictable mobile state with Redux Toolkit and MMKV, while profiling memory leaks and eliminating JS thread frame drops.
+                  <strong>Store Deployments & Testing:</strong> Production release management in Android Studio and Xcode, Jest, React Native Testing Library, ProGuard, and CI/CD pipelines.
                 </span>
               </div>
             </div>
@@ -124,6 +145,53 @@ export const About: React.FC = () => {
           </div>
 
         </div>
+
+        {/* Education & Certification Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6 }}
+          className="p-6 sm:p-8 rounded-3xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-card shadow-sm"
+        >
+          <div className="flex items-center gap-2.5 mb-6">
+            <div className="p-2.5 rounded-xl bg-primary-indigo/10 dark:bg-primary-cyan/10 text-primary-indigo dark:text-primary-cyan">
+              <GraduationCap size={22} />
+            </div>
+            <div>
+              <h3 className="text-lg sm:text-xl font-outfit font-extrabold text-slate-800 dark:text-white">
+                Education & Certification
+              </h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Academic milestones and specialized certifications
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            {educationList.map((edu, idx) => (
+              <div
+                key={idx}
+                className="p-4 sm:p-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/50 dark:bg-darkBg-secondary/40 hover:border-primary-cyan/40 transition-colors"
+              >
+                <div className="flex items-start justify-between gap-3 mb-1">
+                  <h4 className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-snug">
+                    {edu.degree}
+                  </h4>
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-bold text-primary-indigo dark:text-primary-cyan bg-primary-indigo/10 dark:bg-primary-cyan/10 flex-shrink-0">
+                    {edu.year}
+                  </span>
+                </div>
+                <div className="text-xs font-medium text-slate-600 dark:text-slate-400 italic mb-2">
+                  {edu.institution}
+                </div>
+                <p className="text-[11px] text-slate-500 dark:text-slate-450 leading-relaxed font-light">
+                  {edu.highlight}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
       </div>
     </section>

@@ -4,139 +4,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Kumar Srivastava - React Native Developer CV</title>
+    <title>Abhishek Kumar Srivastava - React Native Developer</title>
 
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            line-height: 1.35;
-            color: #222;
+            font-family: "Times New Roman", Times, Georgia, serif;
+            color: #000;
+            background: #f0f2f5;
+            line-height: 1.32;
+            font-size: 10pt;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
-        .container {
-            width: 794px;
-            margin: auto;
-            background: #fff;
-            padding: 16px 24px;
+        .resume-container {
+            width: 210mm;
+            margin: 20px auto;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 13mm 18mm;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
             box-sizing: border-box;
+            position: relative;
         }
 
-        h1 {
-            font-size: 21px;
+        /* Header */
+        .header {
             text-align: center;
-            margin: 0 0 2px 0;
-            color: #0f172a;
-            letter-spacing: -0.3px;
+            margin-bottom: 10px;
         }
 
-        .header p {
-            font-size: 10.5px;
-            text-align: center;
-            margin: 2px 0;
-            color: #475569;
-        }
-
-        .header a {
-            color: #0d47a1;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        h2 {
-            font-size: 11.5px;
-            margin: 8px 0 4px;
-            border-bottom: 1.5px solid #0d47a1;
+        .header h1 {
+            font-size: 19pt;
+            font-weight: bold;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #0d47a1;
-            padding-bottom: 1.5px;
-            font-weight: 700;
+            margin-bottom: 2px;
+            color: #000;
         }
 
-        h3 {
-            font-size: 11px;
-            margin: 3px 0 1px;
+        .header .role-title {
+            font-size: 11pt;
+            font-weight: normal;
+            margin-bottom: 4px;
+            color: #111;
+        }
+
+        .header .contact-info {
+            font-size: 9.8pt;
+            color: #222;
+        }
+
+        .header .contact-info a {
+            color: #0d47a1;
+            text-decoration: underline;
+        }
+
+        /* Section Headings */
+        .section {
+            margin-top: 10px;
+        }
+
+        .section-title {
+            font-size: 10.8pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            padding-bottom: 1.5px;
+            margin-bottom: 4px;
+            letter-spacing: 0.4px;
+            color: #000;
+        }
+
+        /* Summary */
+        .summary-text {
+            font-size: 9.7pt;
+            line-height: 1.32;
+            text-align: justify;
+            color: #111;
+        }
+
+        /* Skills */
+        .skill-row {
+            font-size: 9.7pt;
+            line-height: 1.33;
+            margin-bottom: 2.5px;
+            color: #111;
+        }
+
+        .skill-row strong {
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Experience */
+        .exp-header {
             display: flex;
             justify-content: space-between;
-            color: #1e293b;
+            font-size: 10pt;
+            font-weight: bold;
+            color: #000;
         }
 
-        .job-title {
-            font-weight: 700;
+        .exp-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9.7pt;
+            font-style: italic;
+            margin-bottom: 3.5px;
+            color: #222;
         }
 
-        .job-date {
-            font-weight: 500;
-            font-size: 10.5px;
-            color: #64748b;
+        /* Projects */
+        .project-item {
+            margin-bottom: 6px;
         }
 
-        p {
-            font-size: 10.5px;
-            margin: 2px 0;
-            color: #334155;
+        .project-title {
+            font-size: 10pt;
+            font-weight: bold;
+            color: #000;
         }
 
-        ul {
-            padding-left: 14px;
-            margin: 2px 0 4px;
+        .project-tech {
+            font-size: 9.5pt;
+            font-style: italic;
+            margin: 1px 0 2px 0;
+            color: #222;
         }
 
-        li {
-            font-size: 10.5px;
-            margin-bottom: 1.5px;
-            color: #334155;
+        /* Lists */
+        ul.bullet-list {
+            padding-left: 17px;
+            margin: 1px 0 4px 0;
         }
 
-        .section {
-            margin-top: 4px;
-        }
-
-        .skill-group {
-            font-size: 10.5px;
+        ul.bullet-list li {
+            font-size: 9.7pt;
+            line-height: 1.3;
             margin-bottom: 2px;
-            color: #334155;
+            color: #111;
+            text-align: justify;
         }
 
-        .skill-group strong {
-            color: #0f172a;
-        }
-
+        /* Education */
         .edu-item {
-            font-size: 10.5px;
-            margin-bottom: 1.5px;
-            color: #334155;
+            margin-bottom: 8px;
         }
 
-        .edu-item b {
-            color: #0f172a;
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10pt;
+            font-weight: bold;
+            color: #000;
         }
 
-        /* A4 Print Optimization */
+        .edu-institution {
+            font-size: 9.7pt;
+            font-style: italic;
+            color: #222;
+        }
+
+        .edu-simple {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9.7pt;
+            margin-bottom: 4px;
+            color: #111;
+        }
+
+        .edu-simple .edu-year {
+            font-weight: bold;
+        }
+
+        /* Print and PDF Optimization */
         @page {
             size: A4 portrait;
-            margin: 6mm 8mm;
+            margin: 12mm 16mm;
         }
 
         @media print {
             body {
                 background: none;
+                margin: 0;
+                padding: 0;
             }
 
-            .container {
-                margin: 0;
+            .resume-container {
                 width: 100%;
+                margin: 0;
+            }
+
+            .page {
+                width: 100%;
+                min-height: auto;
+                height: auto;
                 padding: 0;
+                margin: 0;
                 box-shadow: none;
+            }
+
+            .page-break {
+                page-break-before: always;
+                break-before: page;
+                padding-top: 1mm;
             }
         }
     </style>
@@ -144,140 +227,148 @@
 
 <body>
 
-    <div class="container">
+    <div class="resume-container">
 
-        <div class="header">
-            <h1>Abhishek Kumar Srivastava</h1>
-            <p>
-                Email: sriabhi12345@gmail.com | Phone: +91-8004732941 | Location: Baner, Pune, India
-            </p>
-            <p>
-                <a href="https://www.linkedin.com/in/abhishek-srivastava-a0729b104/" target="_blank">LinkedIn</a> |
-                <a href="https://github.com/sriabhi12345" target="_blank">GitHub</a>
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>Profile Summary</h2>
-            <p>
-                Results-driven CDAC Certified React Native Developer with 3+ years of experience delivering
-                high-performance mobile applications for Android and iOS platforms. Expert in building scalable mobile
-                architectures, cross-platform UI engineering, and integrating real-time GPS tracking. Proven track
-                record in optimizing mobile application performance, reducing bundle sizes, and leading
-                end-to-end app development from architecture to store deployment.
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>Key Strengths</h2>
-            <p>
-                <b>CDAC Certified Mobile Engineer • Cross-Platform Mobile Development (iOS & Android) • Native Bridge & JSI Optimization • App Store & Play Store Releases • Clean Modular Architecture • Offline Caching & State Management • Google Maps & Real-Time GPS</b>
-            </p>
-        </div>
-
-        <div class="section">
-            <h2>Technical Skills</h2>
-            <div class="skill-group">
-                <strong>Core Mobile & Languages:</strong> React Native, JavaScript (ES6+), TypeScript
+        <!-- PAGE 1 -->
+        <div class="page">
+            <div class="header">
+                <h1>ABHISHEK KUMAR SRIVASTAVA</h1>
+                <div class="role-title">React Native Developer</div>
+                <div class="contact-info">
+                    Baner, Pune, India | +91-8004732941 | <a href="mailto:sriabhi12345@gmail.com">sriabhi12345@gmail.com</a>
+                </div>
             </div>
-            <div class="skill-group">
-                <strong>State & API Integration:</strong> Redux Toolkit, React Query, Context API, REST APIs, GraphQL,
-                Firebase
+
+            <div class="section">
+                <h2 class="section-title">SUMMARY</h2>
+                <p class="summary-text">
+                    Results-driven CDAC Certified React Native Developer with 3+ years of experience delivering high-performance mobile applications for Android and iOS platforms. Expert in building scalable mobile architectures, cross-platform UI engineering, and integrating real-time GPS tracking. Proven track record in optimizing mobile application performance, reducing bundle sizes, and leading end-to-end app development from architecture to store deployment.
+                </p>
             </div>
-            <div class="skill-group">
-                <strong>Mobile Native & SDKs:</strong> Google Maps API, GPS Location Services, Camera Integration,
-                Razorpay Gateway, Push Notifications
+
+            <div class="section">
+                <h2 class="section-title">TECHNICAL SKILLS</h2>
+                <div class="skill-row">
+                    <strong>Core Mobile & Languages:</strong> React Native, JavaScript (ES6+), TypeScript
+                </div>
+                <div class="skill-row">
+                    <strong>State & API Integration:</strong> Redux Toolkit, React Query, Context API, REST APIs, GraphQL, Firebase
+                </div>
+                <div class="skill-row">
+                    <strong>Mobile Native & SDKs:</strong> Google Maps API, GPS Location Services, Camera Integration, Razorpay Gateway, Push Notifications (FCM)
+                </div>
+                <div class="skill-row">
+                    <strong>Testing & Tooling:</strong> Xcode, Android Studio, Jest, React Native Testing Library, Git, CI/CD
+                </div>
+                <div class="skill-row">
+                    <strong>AI & Developer Tools:</strong> Cursor AI, ChatGPT, Google Gemini, Claude AI
+                </div>
+                <div class="skill-row">
+                    <strong>Core Competencies:</strong> Cross-Platform Mobile Development (iOS & Android), Native Bridge & JSI Optimization, App Store & Play Store Releases, Clean Modular Architecture, Offline Caching, State Management, Real-Time GPS
+                </div>
             </div>
-            <div class="skill-group">
-                <strong>Testing & Tooling:</strong> Xcode, Android Studio, Jest, React Native Testing Library, Git,
-                CI/CD
+
+            <div class="section">
+                <h2 class="section-title">EXPERIENCE</h2>
+                <div class="exp-header">
+                    <span>React Native Developer</span>
+                    <span>July 2023 – Present</span>
+                </div>
+                <div class="exp-sub">
+                    <span>Sphinx Solution Pvt. Ltd.</span>
+                    <span>Pune, India</span>
+                </div>
+                <ul class="bullet-list">
+                    <li>Engineered high-quality cross-platform mobile apps using React Native, reducing launch bundle size and delivering smooth, responsive mobile user interfaces.</li>
+                    <li>Architected robust state management systems using Redux Toolkit and Context API to manage complex offline data caching.</li>
+                    <li>Integrated GraphQL endpoints, REST APIs, Firebase services, and Razorpay payment SDKs for seamless transaction handling.</li>
+                    <li>Implemented background GPS location tracking and dynamic mapping using Google Maps API for real-time app notifications.</li>
+                    <li>Managed build distribution and deployment pipelines across Android Studio and Xcode environments.</li>
+                </ul>
             </div>
-            <div class="skill-group">
-                <strong>AI & Developer Tools:</strong> Cursor AI, ChatGPT, Google Gemini, Claude AI
+
+            <div class="section">
+                <h2 class="section-title">PROJECTS</h2>
+
+                <div class="project-item">
+                    <div class="project-title">Sarwa – AI-Powered Quick Commerce App (Customer App)</div>
+                    <div class="project-tech">Tech Stack: React Native, TypeScript, Firebase FCM, REST APIs, Razorpay, Google Maps SDK, Redux Toolkit</div>
+                    <ul class="bullet-list">
+                        <li>Built an all-in-one AI-powered quick commerce cross-platform app for 5,000+ items with live Google Maps courier tracking.</li>
+                        <li>Implemented secure checkout workflows with Razorpay, smart AI recommendations, and background FCM push notifications.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Sarwa Vendor App – Merchant & Inventory Management App</div>
+                    <div class="project-tech">Tech Stack: React Native, TypeScript, Redux Toolkit, Real-time Sockets, Firebase FCM, REST APIs, Analytics</div>
+                    <ul class="bullet-list">
+                        <li>Developed a merchant enterprise React Native mobile app empowering local vendors to manage orders, catalog, and store operations.</li>
+                        <li>Engineered real-time order dispatch updates, live stock inventory management, staff role permissions, and sales analytics charts.</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-title">Sharehood – Hyper-Local Community & Discovery App (Android)</div>
+                    <div class="project-tech">Tech Stack: React Native, TypeScript, Google Maps SDK, Geolocation Services, Redux Toolkit, Firebase FCM, REST APIs</div>
+                    <ul class="bullet-list">
+                        <li>Engineered a hyper-local mobile marketplace connecting residents with neighborhood merchants, services, and live item availability.</li>
+                        <li>Implemented Google Maps SDK with dynamic GPS radius discovery, real-time store catalogs, and FCM push notifications.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div class="section">
-            <h2>Work Experience</h2>
-            <h3>
-                <span class="job-title">React Native Developer — Sphinx Solution Pvt. Ltd.</span>
-                <span class="job-date">July 2023 – Present | Pune, India</span>
-            </h3>
-            <ul>
-                <li>Engineered high-quality cross-platform mobile apps using React Native, reducing launch bundle size
-                    and delivering smooth, responsive mobile user interfaces.</li>
-                <li>Architected robust state management systems utilizing Redux Toolkit and Context API to manage
-                    complex offline data caching.</li>
-                <li>Integrated GraphQL endpoints, REST APIs, Firebase services, and Razorpay payment SDKs for seamless
-                    transaction handling.</li>
-                <li>Implemented background GPS location tracking and dynamic mapping using Google Maps API for real-time
-                    app notifications.</li>
-                <li>Managed build distribution and deployment pipelines across Android Studio and Xcode environments.
-                </li>
-            </ul>
-        </div>
+        <!-- PAGE 2 -->
+        <div class="page page-break">
+            <div class="project-item" style="margin-top: 2px;">
+                <div class="project-title">No Stress Impress – Dental Care & Impression Guide App</div>
+                <div class="project-tech">Tech Stack: React Native, TypeScript, Native Camera API, Video Player SDK, REST APIs, Image Compression, Redux Toolkit</div>
+                <ul class="bullet-list">
+                    <li>Developed a cross-platform React Native healthcare mobile app guiding users through at-home dental impression workflows.</li>
+                    <li>Built custom native camera capture modules, interactive video player guides, and multipart cloud upload pipelines.</li>
+                    <li>Integrated client-side image compression, reducing upload payload sizes and improving server processing times by 35%.</li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Projects</h2>
+            <div class="project-item">
+                <div class="project-title">Multiply – Creator Engagement App</div>
+                <div class="project-tech">Tech Stack: React Native, GraphQL, Firebase, REST APIs, React Query</div>
+                <ul class="bullet-list">
+                    <li>Engineered a mobile community platform allowing creators to interact with followers, publish updates, and earn rewards.</li>
+                    <li>Integrated low-latency GraphQL subscriptions and Firebase to handle thousands of real-time interactions daily.</li>
+                </ul>
+            </div>
 
-            <h3>Sarwa - AI-Powered Quick Commerce App (Customer App)</h3>
-            <ul>
-                <li>Built an all-in-one AI-powered quick commerce cross-platform app for 5,000+ items with live Google
-                    Maps courier tracking.</li>
-                <li>Implemented secure checkout workflows with Razorpay, smart AI recommendations, and background FCM
-                    push notifications.</li>
-                <li><b>Tech Stack:</b> React Native, TypeScript, Firebase FCM, REST APIs, Razorpay, Google Maps SDK,
-                    Redux Toolkit</li>
-            </ul>
+            <div class="section" style="margin-top: 14px;">
+                <h2 class="section-title">EDUCATION & CERTIFICATION</h2>
 
-            <h3>Sarwa Vendor App - Merchant & Inventory Management App</h3>
-            <ul>
-                <li>Developed merchant enterprise React Native mobile app empowering local vendors to manage orders,
-                    catalog, and store operations.</li>
-                <li>Engineered real-time order dispatch updates, live stock inventory management, staff role
-                    permissions, and sales analytics charts.</li>
-                <li><b>Tech Stack:</b> React Native, TypeScript, Redux Toolkit, Real-time Sockets, Firebase FCM, REST
-                    APIs, Analytics</li>
-            </ul>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span>PG-Diploma in Mobile Computing (PG-DMC), CDAC Certified</span>
+                        <span>2023</span>
+                    </div>
+                    <div class="edu-institution">Sunbeam Institute (C-DAC ACTS)</div>
+                </div>
 
-            <h3>Sharehood - Hyper-Local Community & Discovery App (Android)</h3>
-            <ul>
-                <li>Engineered hyper-local mobile marketplace connecting residents with neighborhood merchants,
-                    services, and live item availability.</li>
-                <li>Implemented Google Maps SDK with dynamic GPS radius discovery, real-time store catalogs, and FCM
-                    push notifications.</li>
-                <li><b>Tech Stack:</b> React Native, TypeScript, Google Maps SDK, Geolocation Services, Redux Toolkit,
-                    Firebase FCM, REST APIs</li>
-            </ul>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <span>B.Tech, Electronics & Communication Engineering</span>
+                        <span>2017</span>
+                    </div>
+                    <div class="edu-institution">PSIT Kanpur</div>
+                </div>
 
-            <h3>No Stress Impress - Dental Care & Impression Guide App</h3>
-            <ul>
-                <li>Developed cross-platform React Native healthcare mobile app guiding users through at-home dental
-                    impression workflows.</li>
-                <li>Built custom native camera capture modules, interactive video player guides, and multipart cloud
-                    upload pipelines.</li>
-                <li>Integrated client-side image compression, reducing upload payload sizes and improving server
-                    processing times by 35%.</li>
-                <li><b>Tech Stack:</b> React Native, TypeScript, Native Camera API, Video Player SDK, REST APIs, Image
-                    Compression, Redux Toolkit</li>
-            </ul>
+                <div class="edu-simple">
+                    <span>Intermediate (12th) – BIC Shahmuhammadpur Candrawar, Ballia</span>
+                    <span class="edu-year">2013</span>
+                </div>
 
-            <h3>Multiply - Creator Engagement App</h3>
-            <ul>
-                <li>Engineered mobile community platform allowing creators to interact with followers, publish updates,
-                    and earn rewards.</li>
-                <li>Integrated low-latency GraphQL subscriptions and Firebase to handle thousands of real-time
-                    interactions daily.</li>
-                <li><b>Tech Stack:</b> React Native, GraphQL, Firebase, REST APIs, React Query</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Education & Certification</h2>
-            <div class="edu-item"><b>CDAC Certified — PG-Diploma in Mobile Computing (PG-DMC)</b> | Sunbeam Institute (C-DAC ACTS) | 2023</div>
-            <div class="edu-item"><b>B.Tech in Electronics & Communication Engineering</b> | PSIT Kanpur | 2017</div>
-            <div class="edu-item"><b>Intermediate (12th)</b> | BIC Shahmuhammadpur Candrawar, Ballia | 2013</div>
-            <div class="edu-item"><b>High School (10th)</b> | Gyan Peethika Jagdishpur, Ballia | 2010</div>
+                <div class="edu-simple">
+                    <span>High School (10th) – Gyan Peethika Jagdishpur, Ballia</span>
+                    <span class="edu-year">2010</span>
+                </div>
+            </div>
         </div>
 
     </div>

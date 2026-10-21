@@ -28,7 +28,7 @@ export const generateAndDownloadResumePdf = async (
     const doc = parser.parseFromString(resumeHtml, 'text/html');
 
     const styleTags = doc.querySelectorAll('style');
-    const container = doc.querySelector('.container') || doc.body;
+    const container = doc.querySelector('.resume-container') || doc.querySelector('.container') || doc.body;
 
     const wrapper = document.createElement('div');
     wrapper.id = 'dynamic-resume-pdf-generator';

@@ -1,45 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin, Cpu, LayoutGrid, Users, Award } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, Award, CheckCircle2, Layers, Cpu, Smartphone } from 'lucide-react';
 
 export const Experience: React.FC = () => {
   const experiences = [
     {
-      role: 'React Native Mobile Developer',
+      role: 'React Native Developer',
       company: 'Sphinx Solution Pvt. Ltd.',
       location: 'Pune, India',
-      duration: 'July 2023 – Present (3+ Years)',
-      summary: 'Spearheading cross-platform iOS and Android mobile app development. Core achievements include executing React Native New Architecture migrations (Fabric & TurboModules), building custom native bridges, optimizing Hermes bytecode execution, and managing continuous store release lifecycles.',
-      categories: [
+      duration: 'July 2023 – Present',
+      summary: 'Delivering end-to-end cross-platform mobile applications for Android and iOS using React Native. Leading architecture design, offline caching pipelines, hardware and payment integrations, and release management across Android Studio and Xcode.',
+      keyDeliverables: [
+        'Engineered high-quality cross-platform mobile apps using React Native, reducing launch bundle size and delivering smooth, responsive mobile user interfaces.',
+        'Architected robust state management systems using Redux Toolkit and Context API to manage complex offline data caching.',
+        'Integrated GraphQL endpoints, REST APIs, Firebase services, and Razorpay payment SDKs for seamless transaction handling.',
+        'Implemented background GPS location tracking and dynamic mapping using Google Maps API for real-time app notifications.',
+        'Managed build distribution and deployment pipelines across Android Studio and Xcode environments.',
+      ],
+      highlights: [
         {
-          title: 'Mobile Architecture & Performance',
-          icon: <Cpu size={16} className="text-primary-indigo" />,
-          items: [
-            'Upgraded mission-critical React Native applications to 0.74+, migrating legacy dependencies to modern TurboModules and Fabric components.',
-            'Implemented React Native New Architecture features including synchronous JSI C++ pointers, Hermes JIT engine, and off-thread UI rendering.',
-            'Reduced app cold-start times by ~35% and cut memory consumption by ~28% through list virtualization, memoization, and Flipper profiling.'
-          ]
+          title: 'Cross-Platform UI & Architecture',
+          icon: <Smartphone size={16} className="text-primary-indigo" />,
+          desc: 'High-performance components, launch bundle size reduction, and smooth 60 FPS user experiences.',
         },
         {
-          title: 'Native Modules & SDK Integrations',
-          icon: <LayoutGrid size={16} className="text-primary-cyan" />,
-          items: [
-            'Built custom native modules for Android (Java/Kotlin) and iOS (Objective-C/Swift) bridging device camera, biometrics, and secure storage.',
-            'Implemented Razorpay and Stripe payment gateway mobile SDKs with biometrics and secure token verification.',
-            'Managed Firebase Suite integrations including FCM push notifications, Crashlytics diagnostics, and deep linking across iOS and Android.',
-            'Engineered real-time driver/courier tracking systems integrating Google Maps SDK with background geolocation services.'
-          ]
+          title: 'State & Hardware Integrations',
+          icon: <Cpu size={16} className="text-primary-cyan" />,
+          desc: 'Redux Toolkit, Context API offline caching, Google Maps background GPS, Razorpay & FCM notifications.',
         },
         {
-          title: 'App Store Deployments & CI/CD',
-          icon: <Users size={16} className="text-primary-violet" />,
-          items: [
-            'Managed end-to-end release lifecycles for Apple App Store (TestFlight, Provisioning, Certificates) and Google Play Console (AAB bundles, ProGuard, Keystores).',
-            'Collaborated with UI/UX designers, backend teams, and mobile QA engineers across fast-paced Agile sprint cycles.'
-          ]
-        }
-      ]
-    }
+          title: 'Release & CI/CD Pipelines',
+          icon: <Layers size={16} className="text-primary-violet" />,
+          desc: 'End-to-end store publishing via Google Play Console and Apple App Store (Xcode & Android Studio).',
+        },
+      ],
+    },
   ];
 
   return (
@@ -53,10 +48,10 @@ export const Experience: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-indigo/10 text-primary-indigo mb-4"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-primary-indigo/10 text-primary-indigo dark:text-primary-cyan dark:bg-primary-cyan/10 mb-4"
           >
             <Award size={12} />
-            <span>Employment Journey</span>
+            <span>Work History</span>
           </motion.div>
           
           <motion.h2
@@ -112,33 +107,53 @@ export const Experience: React.FC = () => {
                 </p>
               </motion.div>
 
-              {/* Categorized Responsibilities */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                {exp.categories.map((cat, catIdx) => (
+              {/* Core CV Deliverables Box */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-card shadow-sm mb-6"
+              >
+                <h4 className="text-sm font-bold uppercase tracking-wider text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary-cyan" />
+                  Key Responsibilities & Deliverables (Sphinx Solution)
+                </h4>
+
+                <div className="space-y-3">
+                  {exp.keyDeliverables.map((item, itemIdx) => (
+                    <div key={itemIdx} className="flex items-start gap-3">
+                      <CheckCircle2 size={16} className="text-primary-cyan flex-shrink-0 mt-0.5" />
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Three Mini Highlights */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {exp.highlights.map((hl, hlIdx) => (
                   <motion.div
-                    key={cat.title}
+                    key={hl.title}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-100px' }}
-                    transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-                    className="p-5 rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-darkBg-card shadow-sm hover:shadow-md transition-shadow duration-200"
+                    transition={{ duration: 0.5, delay: hlIdx * 0.1 }}
+                    className="p-4 rounded-xl border border-slate-200/60 dark:border-slate-800 bg-slate-50/60 dark:bg-darkBg-secondary/40"
                   >
-                    <div className="flex items-center gap-2 mb-4 text-slate-800 dark:text-slate-100">
-                      <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800/60 flex items-center justify-center">
-                        {cat.icon}
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="p-1.5 rounded-lg bg-white dark:bg-slate-800 shadow-sm flex items-center justify-center">
+                        {hl.icon}
                       </div>
-                      <h4 className="text-sm font-bold tracking-tight">
-                        {cat.title}
-                      </h4>
+                      <h5 className="text-xs font-bold text-slate-800 dark:text-slate-100">
+                        {hl.title}
+                      </h5>
                     </div>
-
-                    <ul className="space-y-3">
-                      {cat.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed list-disc list-inside">
-                          <span className="relative -left-1">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed font-light">
+                      {hl.desc}
+                    </p>
                   </motion.div>
                 ))}
               </div>

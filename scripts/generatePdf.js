@@ -1,8 +1,13 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import { pathToFileURL } from 'url';
 
 const candidates = [
+  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
+  'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe',
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   '/Applications/Chromium.app/Contents/MacOS/Chromium',
   '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary',
@@ -11,14 +16,15 @@ const candidates = [
   'google-chrome-stable',
   'chromium',
   'chromium-browser',
-  'chrome'
+  'chrome',
+  'msedge'
 ];
 
 let chromePath = null;
 for (const cand of candidates) {
-  if (cand.startsWith('/')) {
+  if (cand.includes('\\') || cand.startsWith('/')) {
     if (fs.existsSync(cand)) {
-      chromePath = `"${cand}"`;
+      chromePath = cand;
       break;
     }
   } else {
@@ -31,7 +37,7 @@ for (const cand of candidates) {
 }
 
 if (!chromePath) {
-  console.log('Chrome binary not found; using existing PDF in public/ directory.');
+  console.log('Browser binary not found; using existing PDF in public/ directory.');
   process.exit(0);
 }
 
@@ -39,7 +45,13 @@ try {
   fs.mkdirSync('public', { recursive: true });
   const htmlFile = path.resolve('Abhishek_Resume_ReactNative.html');
   const outFile = path.resolve('public/Abhishek_Kumar_Srivastava_React_Native_Developer.pdf');
-  execSync(`${chromePath} --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="${outFile}" "file://${htmlFile}"`, { stdio: 'inherit' });
+  const fileUrl = pathToFileURL(htmlFile).href;
+  
+  console.log(`Using binary: ${chromePath}`);
+  console.log(`Source: ${fileUrl}`);
+  console.log(`Target: ${outFile}`);
+  
+  execSync(`"${chromePath}" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="${outFile}" "${fileUrl}"`, { stdio: 'inherit' });
   console.log(`Generated: ${outFile}`);
 } catch (e) {
   console.warn('Notice: PDF generation skipped or completed with existing build.', e.message);

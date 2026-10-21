@@ -45,10 +45,10 @@ export const Hero: React.FC = () => {
   const highlights = [
     'CDAC Certified (PG-DMC)',
     '3+ Years React Native',
-    'iOS (Xcode) & Android (Gradle)',
-    'Fabric & TurboModules (New Arch)',
-    'Hermes & JSI Performance',
-    'Play Store & App Store Releases',
+    'iOS (Xcode) & Android (Studio)',
+    'Real-Time GPS & Google Maps',
+    'Redux Toolkit & Offline Caching',
+    'App Store & Play Store Releases',
   ];
 
   return (
@@ -91,10 +91,10 @@ export const Hero: React.FC = () => {
             {/* Headline & Subtitle */}
             <div className="space-y-4 max-w-2xl">
               <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-outfit font-bold text-slate-700 dark:text-slate-200">
-                React Native Mobile Developer (iOS & Android)
+                React Native Developer (iOS & Android)
               </motion.h3>
               <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-                Building high-performance, production-ready mobile applications for iOS and Android with React Native and TypeScript. Deeply specialized in React Native New Architecture (Fabric & TurboModules), Hermes engine optimization, custom native bridges, and fluid mobile user experiences.
+                Results-driven CDAC Certified React Native Developer with 3+ years of experience delivering high-performance mobile applications for Android and iOS platforms. Expert in building scalable mobile architectures, cross-platform UI engineering, and integrating real-time GPS tracking.
               </motion.p>
             </div>
 
@@ -219,11 +219,11 @@ export const Hero: React.FC = () => {
                     {'\n'}
                     {`  experience: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
-                    {`  architecture: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
-                    {'\n'}
                     {`  certification: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
-                    {`  performance: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
+                    {`  architecture: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
+                    {'\n'}
+                    {`  specialty: `}<span className="text-[#c792ea]">string</span><span className="text-[#89ddff] font-bold">;</span>
                     {'\n'}
                     <span className="text-[#89ddff]">{`}`}</span>
                     {'\n\n'}
@@ -231,17 +231,17 @@ export const Hero: React.FC = () => {
                     {'\n'}
                     {`  name: `}<span className="text-[#c3e88d]">'Abhishek Kumar Srivastava'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  role: `}<span className="text-[#c3e88d]">'React Native Mobile Developer'</span><span className="text-[#89ddff]">,</span>
+                    {`  role: `}<span className="text-[#c3e88d]">'React Native Developer'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  platforms: `}<span className="text-[#89ddff]">{`[`}</span><span className="text-[#c3e88d]">'iOS'</span><span className="text-[#89ddff]">,</span> <span className="text-[#c3e88d]">'Android'</span><span className="text-[#89ddff]">{`],`}</span>
+                    {`  platforms: `}<span className="text-[#89ddff]">{`[`}</span><span className="text-[#c3e88d]">'Android'</span><span className="text-[#89ddff]">,</span> <span className="text-[#c3e88d]">'iOS'</span><span className="text-[#89ddff]">{`],`}</span>
                     {'\n'}
                     {`  experience: `}<span className="text-[#c3e88d]">'3+ Years'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  architecture: `}<span className="text-[#c3e88d]">'Fabric + TurboModules + JSI'</span><span className="text-[#89ddff]">,</span>
+                    {`  certification: `}<span className="text-[#c3e88d]">'CDAC Certified (PG-DMC)'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  certification: `}<span className="text-[#c3e88d]">'CDAC (PG-DMC)'</span><span className="text-[#89ddff]">,</span>
+                    {`  architecture: `}<span className="text-[#c3e88d]">'Clean Modular + State Management'</span><span className="text-[#89ddff]">,</span>
                     {'\n'}
-                    {`  performance: `}<span className="text-[#c3e88d]">'Hermes JIT + Native Reanimated'</span>
+                    {`  specialty: `}<span className="text-[#c3e88d]">'Real-Time GPS & Cross-Platform UI'</span>
                     {'\n'}
                     <span className="text-[#89ddff]">{`};`}</span>
                   </code>
